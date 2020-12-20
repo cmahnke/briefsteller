@@ -1,3 +1,41 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://briefstelelr.de/"
+languageCode = "de"
+title = "Briefsteller"
+languagecode = "de"
+defaultcontentlanguage = "de"
+publishDir = "docs"
+canonifyurls = true
+disablePathToLower = true
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+theme = ["projektemacher-base"]
+paginate = 6
+
+# navigation
+[menu]
+    [[menu.main]]
+        name = "Über"
+        URL = "/about"
+        weight = 1
+
+[markup.goldmark.renderer]
+  unsafe= true
+
+[imaging]
+    quality = 95
+
+[outputs]
+    page = ["HTML", "JSON"]
+
+[module]
+    [[module.mounts]]
+        source = "assets/scss"
+        target = "assets/scss"
+
+    [[module.mounts]]
+        source = "static"
+        target = "static"
+
+    [[module.mounts]]
+        source = "assets/js"
+        target = "assets/js"
