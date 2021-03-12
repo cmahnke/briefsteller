@@ -2,8 +2,9 @@
 title: "Neuster Universal=Briefsteller"
 bookTitle: 'Neuster Universal=Briefsteller - Eine gründliche Anweisung zur Abfassung aller der in der gewöhnlichen Verhältnissen, sowie im Geschäftsleben vorkommenden Briefen, Aufsätzen, Verträgen usw. - Ein Ratgeber für jedermann'
 bookAuthor: 'H. Brunner'
-date: 2020-12-28T13:04:53+02:00
+date: 2021-01-01T13:04:53+02:00
 iiifContext: http://iiif.io/api/image/2/context.json
+type: book
 tags:
 -
 itemDescription: ''

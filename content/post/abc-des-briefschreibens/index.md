@@ -2,8 +2,9 @@
 title: "ABC des Briefschreibens"
 bookTitle: 'ABC des Briefschreibens - Der schriftliche Verkehr im täglichen Geschäfts- und Privatverkehr'
 bookAuthor: 'Dr. Th. Meissner'
-date: 2021-01-15T13:04:53+02:00
+date: 2021-01-17T13:04:53+02:00
 iiifContext: http://iiif.io/api/image/2/context.json
+type: book
 tags:
 -
 itemDescription: ''

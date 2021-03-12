@@ -2,8 +2,9 @@
 title: "Muster-Briefsteller"
 bookTitle: 'Kleiner Muster-Briefsteller und Haus-Sekretär für allen in den gesellschaftlichen Verhältnissen sowie im Geschäfts- und Privatleben vorkommenden Fällen - Ein unendbehrliches Handbuch für Jedermann und ein Rathgeber für alle Stände.'
 bookAuthor: 'Georg von Saal'
-date: 2020-12-28T13:04:53+02:00
+date: 2021-01-03T13:04:53+02:00
 iiifContext: http://iiif.io/api/image/2/context.json
+type: book
 tags:
 -
 itemDescription: ''

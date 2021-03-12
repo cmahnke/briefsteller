@@ -9,7 +9,7 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
-paginate = 6
+paginate = 20
 
 # navigation
 [menu]
@@ -25,7 +25,7 @@ paginate = 6
     quality = 95
 
 [outputs]
-    page = ["HTML", "JSON"]
+    page = ["HTML"]
 
 [module]
     [[module.mounts]]

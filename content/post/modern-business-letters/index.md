@@ -2,8 +2,9 @@
 title: "Modern Business Letters"
 bookTitle: 'Modern Business Letters - Lehrbuch des englischen Handelsbriefverkehrs für Wirtschaftsschulen'
 bookAuthor: ['Dipl.-Hdl. Walter Lentz', 'Will Potter']
-date: 2020-12-28T13:04:53+02:00
+date: 2021-01-10T13:04:53+02:00
 iiifContext: http://iiif.io/api/image/2/context.json
+type: book
 tags:
 -
 itemDescription: ''

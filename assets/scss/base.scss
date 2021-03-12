@@ -1,2 +1,117 @@
 @import "normalize";
 @import "icons";
+
+@font-face {
+  font-family: 'DS Behrensschrift';
+  src: url('/fonts/DSBehrensschrift.otf') format('woff'),
+       url('/fonts/DSBehrensschrift.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+/* Fonts */
+$font-color-heading: #342211;
+$font-color-body: #412B15;
+
+/* Content area */
+$content-width: 70%;
+$content-bg-color: #333;
+$footer-bg-color: rgba(0, 0, 0, .7);
+$info-bg-color: rgba(0, 0, 0, .7);
+
+.header {
+    width: $content-width;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: .6em;
+
+    .header-title {
+        font-family: 'DS Behrensschrift';
+    }
+
+    .menu {
+        margin-top: .4em;
+        float: right;
+    }
+
+}
+
+#main {
+    background-color: $content-bg-color;
+}
+
+#shelf {
+    display: flex;
+    width: $content-width;
+    flex-wrap: wrap;
+    margin: auto;
+
+
+    ul {
+
+        .book {
+            color: white;
+            width: 200px;
+            height: 220px;
+            margin: 20px 2px 20px 2px;
+            padding-bottom: 50px;
+            position: relative;
+            display: inline-flex;
+
+            img {
+                height: 72%;
+                box-shadow: 0px 8px 10px gray;
+                width: auto;
+                position: absolute;
+                bottom: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+        }
+
+        .post-content {
+            display: none;
+            background-color: $info-bg-color;
+        }
+
+        .post-content.active {
+            display: block;
+        }
+
+    }
+}
+
+.footer {
+    width: 100%;
+    background-color: $footer-bg-color;
+
+    .credit {
+
+        font-weight: 400;
+        margin: auto;
+        padding: 1.5em 1.5em 0.5em;
+        width: $content-width;
+
+        box-sizing: border-box;
+
+        .colophon {
+            margin: auto;
+            width: 70%;
+            border-top-color: $font-color-body;
+            border-top-width: 1px;
+            border-top-style: solid;
+            margin-top: 1rem;
+
+            p {
+                margin: .4rem;
+                text-align: center;
+            }
+        }
+
+    }
+}

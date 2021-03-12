@@ -1,6 +1,7 @@
+package.json
 node_modules
+patches
 docs
 static/images/favicon*
 static/images/background.jpg
 resources
-
