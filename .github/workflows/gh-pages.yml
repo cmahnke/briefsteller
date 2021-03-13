@@ -1,0 +1,69 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '30 23 1 * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+
+      - name: Login to GitHub Packages Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+          logout: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.22.0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.81.0'
+          extended: true
+
+      - name: Setup dependencies
+        run: |
+          sudo apt-get install jq
+
+      - name: Create IIIF derivates
+# UID is als available via $(id -u)
+        run: |
+          echo "Running as ${UID}"
+          docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://static.projektemacher.org/blaufusstoelpel/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
+
+      - name: Generate Files
+        env:
+          SKIP_IIIF: yes
+        run: |
+          ./scripts/setup.sh
+
+      - name: Build Hugo site
+        run: hugo
+
+      - name: Cleanup disk
+        run: |
+          df -h
+          docker rmi -f ghcr.io/cmahnke/iiif-action:latest
+          rm -rf node_modules
+          rm -rf content
+          df -h
+
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true
