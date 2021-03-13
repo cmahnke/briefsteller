@@ -48,6 +48,7 @@ jobs:
         env:
           SKIP_IIIF: yes
         run: |
+          sudo apt-get install bash jq findutils
           ./scripts/setup.sh
 
       - name: Build Hugo site
