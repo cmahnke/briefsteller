@@ -34,10 +34,6 @@ jobs:
           hugo-version: '0.81.0'
           extended: true
 
-      - name: Setup dependencies
-        run: |
-          sudo apt-get install jq
-
       - name: Create IIIF derivates
 # UID is als available via $(id -u)
         run: |

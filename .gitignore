@@ -5,3 +5,8 @@ docs
 static/images/favicon*
 static/images/background.jpg
 resources
+content/post/*/front/
+content/post/*/title/
+content/post/*/cover/
+content/post/*/img*/
+content/post/*/page*/
