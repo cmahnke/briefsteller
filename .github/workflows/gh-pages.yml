@@ -48,7 +48,13 @@ jobs:
           ./scripts/setup.sh
 
       - name: Build Hugo site
-        run: hugo
+        run: hugo --i18n-warnings
+
+      - name: Validate JSON
+        env:
+          OSTYPE: linux
+        run: |
+          yarn run validate
 
       - name: Cleanup disk
         run: |
