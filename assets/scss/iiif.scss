@@ -1,0 +1,111 @@
+/* IIIF */
+.iiif, .book-description-images {
+    max-width: $content-width;
+
+  .viewer {
+    width: $content-width;
+    display: block;
+    margin: auto;
+
+      &.portrait {
+          width: $content-width;
+          height: calc(#{$content-width} * 1.5);
+
+          @media (max-width: 37.5em) {
+             width: 85vw;
+             height: calc(85vw * 1.5);
+          }
+
+          @media (max-width: 30em) {
+             width: 80vw;
+             height: calc(80vw * 1.5);
+          }
+
+      }
+
+      &.landscape {
+          width: $content-width;
+          height: calc(#{$content-width} / 1.5);
+
+          @media (max-width: 37.5em) {
+             width: 85vw;
+             height: calc(85vw / 1.5);
+          }
+
+          @media (max-width: 30em) {
+             width: 80vw;
+             height: calc(80vw / 1.5);
+          }
+      }
+
+  }
+
+  .iiif-image {
+    width: 100%;
+    padding: 0.3em;
+  }
+
+  .iiif-image.cover {
+    display: inline-block;
+  }
+
+  .iiif-image.cover {
+      order: 1;
+  }
+
+  .iiif-image.front {
+      order: 2;
+  }
+
+  .iiif-image.title {
+      order: 3;
+  }
+
+  .lanscape {
+      width: 100%;
+  }
+
+  .iiif-image.order-1 {
+    order: 11;
+    width: 100%;
+  }
+
+  .iiif-image.order-2 {
+    order: 12;
+    width: 100%;
+  }
+
+  .iiif-image.order-3 {
+    order: 13;
+    width: 100%;
+  }
+
+  .iiif-image.order-4 {
+    order: 14;
+    width: 100%;
+  }
+
+  .iiif-image.order-5 {
+    order: 15;
+    width: 100%;
+  }
+
+  .iiif-image.order-6 {
+    order: 16;
+    width: 100%;
+  }
+
+  .iiif-image.order-7 {
+    order: 17;
+    width: 100%;
+  }
+
+  .iiif-image.order-8 {
+    order: 18;
+    width: 100%;
+  }
+}
+
+.book-description-images {
+    margin: auto;
+}

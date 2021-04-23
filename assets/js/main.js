@@ -1,6 +1,16 @@
 window.$ = window.jQuery = require('jquery');
 
+require('./iiif-image-viewer');
+
 $(document).ready(function() {
+
+    $('.book').mouseenter(function(){
+      $(this).parent('.wrap').addClass('rotate');
+    });
+
+    $('.book').mouseleave(function(){
+      $(this).parent('.wrap').removeClass('rotate');
+    });
 
     $('#shelf').find('.book').each(function() {
         $(this).on('click', function() {

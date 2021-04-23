@@ -20,4 +20,4 @@ resources:
     iiif: title/info.json
     class: title
 ---
-Der Titel dieses Werks macht sowohl Umfang als auch Anspruch deutlich.
+Der volle Titel dieses Werks macht sowohl Umfang als auch Anspruch deutlich.

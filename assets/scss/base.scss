@@ -1,102 +1,169 @@
 @import "normalize";
 @import "icons";
-
-@font-face {
-  font-family: 'DS Behrensschrift';
-  src: url('/fonts/DSBehrensschrift.otf') format('woff'),
-       url('/fonts/DSBehrensschrift.ttf')  format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  text-rendering: optimizeLegibility;
-}
+@import "fonts/ds-behrensschrift";
+@import "fonts/alata-regular";
+@import "footer";
+@import "ol-iiif";
+@import "share";
 
 /* Fonts */
-$font-color-heading: #342211;
-$font-color-body: #412B15;
-
+$font-color-heading: #402913;
+$font-color-body: #1f170f;
+$font-face-header: 'DS Behrensschrift';
+$font-face-body: 'Alata Regular';
+/* Colors */
+$body-bg-color: #f7f1e8;
 /* Content area */
-$content-width: 70%;
-$content-bg-color: #333;
-$footer-bg-color: rgba(0, 0, 0, .7);
-$info-bg-color: rgba(0, 0, 0, .7);
+$content-width: 64em;
+$home-bg-color: #333;
+/* Header and Footer */
+
+@import "iiif";
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    background-color: $body-bg-color;
+}
 
 .header {
-    width: $content-width;
-    margin: auto;
-    margin-bottom: 1em;
-    padding: .6em;
+    width: 100%;
+    /* background-color: $frame-bg-color; */
+    height: 6em;
 
-    .header-title {
-        font-family: 'DS Behrensschrift';
+    .header-container {
+        width: $content-width;
+        margin: auto;
+        padding: 0.6em;
+
+        .header-title {
+            color: $font-color-heading;
+            font-family: $font-face-header;
+            font-size: 3em;
+            margin-block-start: 0.2em;
+            margin-block-end: 0.2em;
+        }
+
+        .menu {
+            font-family: $font-face-body;
+            color: $font-color-body;
+            margin-top: 0.4em;
+            float: right;
+        }
     }
-
-    .menu {
-        margin-top: .4em;
-        float: right;
-    }
-
 }
 
-#main {
-    background-color: $content-bg-color;
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+
+    .main {
+        font-family: $font-face-body;
+        padding-bottom: 4.6em;
+
+        .post {
+            padding: .8em;
+            margin: auto;
+            max-width: $content-width;
+        }
+    }
 }
 
-#shelf {
-    display: flex;
-    width: $content-width;
-    flex-wrap: wrap;
-    margin: auto;
+.shelf-container {
+    background-color: $home-bg-color;
+    box-shadow: 0 -.3rem .3rem $home-bg-color, 0 .3rem .3rem $home-bg-color;
+    min-height: calc(100vh - 9em);
 
+    .shelf {
+        max-width: $content-width;
+        margin: auto;
 
-    ul {
+        .book-list {
+            padding-inline-start: 0;
+            display: flex;
+            flex-wrap: wrap;
 
-        .book {
-            color: white;
-            width: 200px;
-            height: 220px;
-            margin: 20px 2px 20px 2px;
-            padding-bottom: 50px;
-            position: relative;
-            display: inline-flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
 
-            img {
-                height: 72%;
-                box-shadow: 0px 8px 10px gray;
-                width: auto;
-                position: absolute;
-                bottom: 20%;
-                left: 50%;
-                transform: translateX(-50%);
-                max-height: 100%;
-                max-width: 100%;
+            li {
+                position: relative;
+                display: inline-flex;
             }
 
-        }
+            .context {
+                width: 100%;
+                height: 100%;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+                overflow: hidden;
+            }
 
-        .post-content {
-            display: none;
-            background-color: $info-bg-color;
-        }
+            .wrap {
+                transition: all ease-out 0.6s;
+            }
 
-        .post-content.active {
-            display: block;
-        }
+            .book-back {
+                content: "";
+                height: 600px;
+                width: 60px;
+                position: absolute;
+                right: 0;
+                left: -401px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #AB4747;
+                transform: rotateY(-80deg) translateX(-14px);
+            }
 
+            .book {
+                color: white;
+                width: 320px;
+                height: 360px;
+                /* margin: 20px 2px 20px 2px; */
+                padding-bottom: 50px;
+
+                img {
+                    height: 72%;
+                    box-shadow: 0 8px 10px gray;
+                    width: auto;
+                    position: absolute;
+                    bottom: 20%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+
+            .post-content {
+                display: none;
+                /* background-color: $info-bg-color; */
+            }
+
+            .post-content.active {
+                display: block;
+            }
+        }
     }
+}
+
+.rotate {
+    transform: rotateY(20deg);
 }
 
 .footer {
     width: 100%;
-    background-color: $footer-bg-color;
-
+    /* background-color: $footer-bg-color; */
     .credit {
-
         font-weight: 400;
         margin: auto;
         padding: 1.5em 1.5em 0.5em;
         width: $content-width;
-
         box-sizing: border-box;
 
         .colophon {
@@ -108,10 +175,53 @@ $info-bg-color: rgba(0, 0, 0, .7);
             margin-top: 1rem;
 
             p {
-                margin: .4rem;
+                margin: 0.4rem;
                 text-align: center;
             }
         }
+    }
+}
 
+.date {
+    float: right;
+}
+
+.content {
+    p {
+        line-height: 1.5;
+    }
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: $font-color-body;
+}
+
+footer.footer {
+    position: absolute;
+    bottom: 0;
+    padding-top: .8em;
+    padding-bottom: .8em;
+    height: 3em;
+    width: 100%;
+    font-family: $font-face-body;
+    color: $font-color-body;
+    margin: auto;
+
+    .footer-container {
+        text-align: center;
+        font-size: unset;
+        line-height: 1.4;
+        margin-top: unset;
+
+        p {
+            display: block;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+        }
     }
 }
