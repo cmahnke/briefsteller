@@ -5,7 +5,7 @@ IIIF_STATIC_CMD=""
 OUTPUT_PREFIX=""
 DEFAULT_URL_PREFIX="."
 
-if [[ -z "$URL_PREFIX" ]] ; then
+if [ -z "$URL_PREFIX" ] ; then
     echo "URL_PREFIX is not set, setting it to '$DEFAULT_URL_PREFIX'"
     URL_PREFIX="$DEFAULT_URL_PREFIX"
 else

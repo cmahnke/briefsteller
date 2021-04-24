@@ -5,7 +5,6 @@
 @import "footer";
 @import "ol-iiif";
 @import "share";
-
 /* Fonts */
 $font-color-heading: #402913;
 $font-color-body: #1f170f;
@@ -17,7 +16,6 @@ $body-bg-color: #f7f1e8;
 $content-width: 64em;
 $home-bg-color: #333;
 /* Header and Footer */
-
 @import "iiif";
 
 body,
@@ -54,7 +52,6 @@ html {
     }
 }
 
-
 .page-wrapper {
     position: relative;
     min-height: 100vh;
@@ -64,46 +61,177 @@ html {
         padding-bottom: 4.6em;
 
         .post {
-            padding: .8em;
+            padding: 0.8em;
             margin: auto;
             max-width: $content-width;
         }
     }
 }
-
+/* Book size settings */
+$book-width: 240px;
+$book-height: 320px;
+/* Flip Effect: https://codepen.io/Podgro/pen/yeEqPW */
 .shelf-container {
     background-color: $home-bg-color;
-    box-shadow: 0 -.3rem .3rem $home-bg-color, 0 .3rem .3rem $home-bg-color;
+    box-shadow: 0 -.3rem 0.3rem $home-bg-color, 0 0.3rem 0.3rem $home-bg-color;
     min-height: calc(100vh - 9em);
+    padding-top: 1em;
 
     .shelf {
         max-width: $content-width;
         margin: auto;
 
+        .context * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            color: #000;
+            background: transparent;
+            border: none;
+        }
+
         .book-list {
             padding-inline-start: 0;
             display: flex;
             flex-wrap: wrap;
-
             justify-content: center;
             align-content: center;
             align-items: center;
 
-            li {
+            .book-li {
                 position: relative;
                 display: inline-flex;
+                transition: all linear 1.2s;
+                flex-basis: 0;
+
+                &.row {
+                    flex-basis: calc(#{$content-width} / 2);
+                    justify-content: flex-end;
+                    .context {
+                        margin: unset;
+                    }
+                }
             }
 
             .context {
-                width: 100%;
                 height: 100%;
-                perspective: 1000px;
-                transform-style: preserve-3d;
-                overflow: hidden;
+                max-width: $content-width;
+                margin: 0 auto;
+                text-align: center;
+                position: relative;
+
+                .tilt {
+                    width: 100%;
+                    height: 100%;
+                    perspective: 1000px;
+                    transform-style: preserve-3d;
+                    overflow: hidden;
+                    padding: 2rem;
+                }
             }
 
-            .wrap {
+            .book-wrap {
                 transition: all ease-out 0.6s;
+                margin: 0 auto;
+                position: relative;
+                transform-style: preserve-3d;
+                height: 100%;
+                width: 100%;
+
+                .page {
+                    display: none;
+                }
+
+                .back,
+                .front,
+                .page1,
+                .page2,
+                .page3,
+                .page4,
+                .page5,
+                .page6 {
+                    transform-style: preserve-3d;
+                    position: absolute;
+                    width: $book-width;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    transform-origin: left center;
+                    transition: transform 0.5s ease-in-out, box-shadow 0.35s ease-in-out;
+                }
+
+                .front,
+                .page1,
+                .page3,
+                .page5 {
+                    border-bottom-right-radius: 0.5em;
+                    border-top-right-radius: 0.5em;
+                }
+
+                .back,
+                .page2,
+                .page4,
+                .page6 {
+                    border-bottom-right-radius: 0.5em;
+                    border-top-right-radius: 0.5em;
+                }
+
+                .page1 {
+                    background: #efefef;
+                }
+
+                .page2 {
+                    background: #efefef;
+                }
+
+                .page3 {
+                    background: #f5f5f5;
+                }
+
+                .page4 {
+                    background: #f5f5f5;
+                }
+
+                .page5 {
+                    background: #fafafa;
+                }
+
+                .page6 {
+                    background: #fdfdfd;
+                }
+
+                .page1.open {
+                    transform: rotateY(-150deg) scale(1.1);
+                    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+                }
+
+                .page2.open {
+                    transform: rotateY(-30deg) scale(1.1);
+                    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+                }
+
+                .page3.open {
+                    transform: rotateY(-140deg) scale(1.1);
+                    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+                }
+
+                .page4.open {
+                    transform: rotateY(-40deg) scale(1.1);
+                    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+                }
+
+                .page5.open {
+                    transform: rotateY(-130deg) scale(1.1);
+                    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+                }
+
+                .page6.open {
+                    transform: rotateY(-50deg) scale(1.1);
+                    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+                }
             }
 
             .book-back {
@@ -122,21 +250,51 @@ html {
 
             .book {
                 color: white;
-                width: 320px;
-                height: 360px;
-                /* margin: 20px 2px 20px 2px; */
-                padding-bottom: 50px;
+                width: $book-width;
+                height: $book-height;
+                background-repeat: no-repeat;
+                background-size: auto 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
 
-                img {
-                    height: 72%;
-                    box-shadow: 0 8px 10px gray;
-                    width: auto;
-                    position: absolute;
-                    bottom: 20%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    max-height: 100%;
-                    max-width: 100%;
+            .book-spine {
+                content: "";
+                height: $book-height;
+                width: 30px;
+                position: absolute;
+                right: 0;
+                left: calc(0px - #{$book-width} - 1px);
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #51361A;
+                transform: rotateY(-80deg) translateX(-14px);
+            }
+
+            .close-book {
+                display: none;
+                transition: opacity linear 0.5s;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0.5em;
+                top: 1em;
+                right: 1em;
+                border: 0;
+                cursor: pointer;
+                border-radius: 3px;
+                background-image: url($close-dark);
+                background-size: 80% 80%;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 0.2s;
                 }
             }
 
@@ -204,8 +362,8 @@ a:visited {
 footer.footer {
     position: absolute;
     bottom: 0;
-    padding-top: .8em;
-    padding-bottom: .8em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
     height: 3em;
     width: 100%;
     font-family: $font-face-body;
@@ -220,8 +378,8 @@ footer.footer {
 
         p {
             display: block;
-            margin-block-start: 0em;
-            margin-block-end: 0em;
+            margin-block-start: 0;
+            margin-block-end: 0;
         }
     }
 }

@@ -2,7 +2,11 @@
 
 echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
 
-./scripts/iiif.sh
+if [ -z "$SKIP_IIIF" ] ; then
+    ./scripts/iiif.sh
+fi
+
+rm -f 'themes/projektemacher-base/patches/mirador+3.0.0.patch'
 
 #NPM dependencies
 echo "Calling theme scripts"

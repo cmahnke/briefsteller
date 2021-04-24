@@ -23,6 +23,12 @@ jobs:
           password: ${{ secrets.CR_PAT }}
           logout: false
 
+      - name: Install required dependencies
+        env:
+          SKIP_IIIF: yes
+        run: |
+          ./themes/projektemacher-base/scripts/github/setup-dependendies.sh
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -44,7 +50,6 @@ jobs:
         env:
           SKIP_IIIF: yes
         run: |
-          sudo apt-get install bash jq findutils
           ./scripts/setup.sh
 
       - name: Build Hugo site
