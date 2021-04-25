@@ -3,9 +3,14 @@
     <div class="shelf">
         <ul class="book-list">
           {{- range where $pages "Params.type" "eq" "book" -}}
-            {{- $title := .Params.title -}}
+            {{- $titleThumb := "" -}}
+            {{- $title := .Resources.GetMatch "title*" -}}
             {{- $front := .Resources.GetMatch "front*" -}}
-            {{- $thumb := $front.Resize "330x" -}}
+            {{- if ne $title nil -}}
+                {{- $titleThumb = ($title.Resize "330x").RelPermalink -}}
+            {{- end -}}
+            {{- $frontThumb := $front.Resize "330x" -}}
+
             {{- $large := $front.Resize "1600x" -}}
             {{- $content := (partial "li.html" .) -}}
 
@@ -14,34 +19,32 @@
                 <div class="tilt">
                     <div class="book-wrap">
                       <a class="book-link" href="#" data-href="{{ .RelPermalink }}">
-                          <div class="page6 page" style="overflow: hidden;">
+                          <div class="page6 page" style="overflow: hidden; background-image: url({{ $titleThumb }});">
                               <div class="page-content">
-                              <div class="close-book"></div>
-                              {{- if .Params.bookTitle -}}
-                                  {{- .Params.bookTitle | markdownify -}}
-                              {{- else if .Params.title -}}
-                                  {{- .Params.title | markdownify -}}
-                              {{- end -}}
+                                  <div class="close-book"></div>
+                              
                               </div>
                           </div>
-                          <div class="page5 page"></div>
+                          <div class="page5 page">
+                          <div class="page-content">
+                          {{- if .Params.title -}}
+                              {{- .Params.title | markdownify -}}
+                          {{- end -}}
+                          </div></div>
                           <div class="page4 page"></div>
                           <div class="page3 page"></div>
                           <div class="page2 page"></div>
                           <div class="page1 page"></div>
                           {{/*
-                          <div class="book preview " style="background-image: url({{ $thumb.RelPermalink }});" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}"></div>
+                          <div class="book preview " style="background-image: url({{ $frontThumb.RelPermalink }});" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}"></div>
                           */}}
                           <div class="book preview page" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}">
-                              <img class="preview" src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}">
+                              <img class="preview" src="{{ $frontThumb.RelPermalink }}" alt="{{ .Title }}">
                           </div>
                           <div class="book-spine"></div>
                       </a>
 
                   </div>
-                  <!--
-                  <div class="book-back" style="background-image: url({{ safeCSS $thumb.RelPermalink }});"></div>
-                  -->
                   <div class="post-content">{{ $content | safeHTML }}</div>
               </div>
               </div>

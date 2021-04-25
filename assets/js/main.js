@@ -12,6 +12,7 @@ function addRotate(nodes) {
     });
 }
 
+
 function addClick(node) {
     node.click(function (event) {
 
@@ -20,6 +21,9 @@ function addClick(node) {
         var itemWidth = $('.shelf .tilt').outerWidth();
         var rowItems = Math.round(containerWidth / itemWidth);
         console.log('Width of container ' + containerWidth + ' item width ' + itemWidth + ' items per row ' + rowItems);
+
+
+
 
         /* Reset already opened books - TODO: add transition */
         $('.book-li.open').removeClass('open')
@@ -30,6 +34,12 @@ function addClick(node) {
         $(this).closest('.book-li').css('justify-content', 'flex-end').addClass('open');
 
         var link = $(this).parent('a');
+
+        var pageHeight = link.find('.book.preview img').height();
+        link.find('.page').each(function (){
+            $(this).height(pageHeight);
+        });
+
         link.parent('.book-wrap').removeClass('rotate');
         link.unbind('mouseenter').unbind('mouseleave');
         link.children('.page').each(function () {
@@ -76,10 +86,12 @@ $(document).ready(function() {
     });
 
     $('.book-link').each(function () {
+/*
         var pageHeight = $(this).find('.book.preview img').height();
         $(this).find('.page').each(function (){
             $(this).height(pageHeight);
         });
+        */
         addClick($(this).find('.book.preview'));
     });
 
