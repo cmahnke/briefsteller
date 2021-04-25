@@ -8,27 +8,33 @@
             {{- $thumb := $front.Resize "330x" -}}
             {{- $large := $front.Resize "1600x" -}}
             {{- $content := (partial "li.html" .) -}}
-            {{- $id := delimit (shuffle (seq 1 9)) "" -}}
-            <li data-content-id="{{ $id }}" class="book-li">
+
+            <li class="book-li">
               <div class="context">
                 <div class="tilt">
                     <div class="book-wrap">
                       <a class="book-link" href="#" data-href="{{ .RelPermalink }}">
-                          <div class="page6 page">
+                          <div class="page6 page" style="overflow: hidden;">
+                              <div class="page-content">
                               <div class="close-book"></div>
                               {{- if .Params.bookTitle -}}
                                   {{- .Params.bookTitle | markdownify -}}
                               {{- else if .Params.title -}}
                                   {{- .Params.title | markdownify -}}
                               {{- end -}}
-
+                              </div>
                           </div>
                           <div class="page5 page"></div>
                           <div class="page4 page"></div>
                           <div class="page3 page"></div>
                           <div class="page2 page"></div>
                           <div class="page1 page"></div>
-                          <div class="book preview" style="background-image: url({{ $thumb.RelPermalink }});" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}"></div>
+                          {{/*
+                          <div class="book preview " style="background-image: url({{ $thumb.RelPermalink }});" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}"></div>
+                          */}}
+                          <div class="book preview page" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}">
+                              <img class="preview" src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}">
+                          </div>
                           <div class="book-spine"></div>
                       </a>
 
@@ -36,7 +42,7 @@
                   <!--
                   <div class="book-back" style="background-image: url({{ safeCSS $thumb.RelPermalink }});"></div>
                   -->
-                  <div class="post-content" id="{{ $id }}">{{ $content | safeHTML }}</div>
+                  <div class="post-content">{{ $content | safeHTML }}</div>
               </div>
               </div>
             </li>
