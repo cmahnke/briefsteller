@@ -1,4 +1,5 @@
 window.$ = window.jQuery = require('jquery');
+require('velocity-animate');
 
 require('./iiif-image-viewer');
 
