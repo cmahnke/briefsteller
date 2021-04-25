@@ -14,7 +14,15 @@
                 <div class="tilt">
                     <div class="book-wrap">
                       <a class="book-link" href="#" data-href="{{ .RelPermalink }}">
-                          <div class="page6 page"></div>
+                          <div class="page6 page">
+                              <div class="close-book"></div>
+                              {{- if .Params.bookTitle -}}
+                                  {{- .Params.bookTitle | markdownify -}}
+                              {{- else if .Params.title -}}
+                                  {{- .Params.title | markdownify -}}
+                              {{- end -}}
+
+                          </div>
                           <div class="page5 page"></div>
                           <div class="page4 page"></div>
                           <div class="page3 page"></div>
@@ -23,7 +31,7 @@
                           <div class="book preview" style="background-image: url({{ $thumb.RelPermalink }});" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}"></div>
                           <div class="book-spine"></div>
                       </a>
-                      <div class="close-book"></div>
+
                   </div>
                   <!--
                   <div class="book-back" style="background-image: url({{ safeCSS $thumb.RelPermalink }});"></div>
