@@ -1,7 +1,4 @@
 {
   "name": "briefsteller",
-  "version": "0.1.0",
-  "dependencies": {
-    "velocity-animate": "^1.5.2"
-  }
+  "version": "0.1.0"
 }

@@ -9,14 +9,19 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
-paginate = 20
+paginate = 8
 
 # navigation
 [menu]
     [[menu.main]]
+        name = "Neuste Beiträge"
+        URL = "/post"
+        weight = 1
+
+    [[menu.main]]
         name = "Über"
         URL = "/about"
-        weight = 1
+        weight = 2
 
 [markup.goldmark.renderer]
   unsafe= true

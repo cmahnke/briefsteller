@@ -1,6 +1,8 @@
 {{- $page := .Page -}}
 {{- $class := .Params.type -}}
-<div class="post {{ $class }}">
+{{- $context := path.Dir .File.Path -}}
+{{- $pageURL := .Permalink -}}
+<div class="post-container post {{ $class }}">
     <div class="content">
         {{- if not .Params.metaPage -}}
             <div class="date">
@@ -8,32 +10,37 @@
             </div>
         {{- end -}}
         <h1 class="post-title">{{ .Title }}</h1>
+         {{- if not .Params.metaPage -}}
+            <div class="date">
+                <a href="{{ .RelPermalink }}">{{- partial "date.html" . -}}</a>
+            </div>
+        {{- end -}}
         <div class="post-body">
             {{ .Content }}
         </div>
 
 
-        <div class="iiif">
-          {{- $context := path.Dir .File.Path -}}
-          {{- $pageURL := .Permalink -}}
-          {{- range .Params.resources -}}
-            {{- if or (and (ne $.Params.type "work") (ne $.Params.type "book")) (not (or (or (eq .name "front") (eq .name "title")) (eq .name "cover"))) -}}
-              {{- if .params.iiif -}}
-                {{ partial "iiif/iiif-image.html" (dict "context" . "contextPath" $context "pageURL" .Permalink "pageContext" $page "site" $.Site) }}
+        {{- if .Params.iiif -}}
+            <div class="iiif">
+              {{- range .Params.resources -}}
+                {{- if or (and (ne $.Params.type "work") (ne $.Params.type "book")) (not (or (or (eq .name "front") (eq .name "title")) (eq .name "cover"))) -}}
+                  {{- if .params.iiif -}}
+                    {{ partial "iiif/iiif-image.html" (dict "context" . "contextPath" $context "pageURL" .Permalink "pageContext" $page "site" $.Site) }}
+                  {{- end -}}
+                {{- end -}}
               {{- end -}}
-            {{- end -}}
-          {{- end -}}
-        </div>
+            </div>
+        {{- end -}}
 
         {{- if and .Params.type (or .Params.description .Params.bookTitle) -}}
           <div class="{{ .Params.itemType }}-description">
             {{- if eq .Params.type "book" -}}
-                <h1>{{ i18n "aboutTheNeu" }} {{ i18n "book" }}</h1>
-                <h2 class="book-title">{{ .Params.bookTitle }}</h2>
+                <h2>{{ i18n "aboutTheNeu" }} {{ i18n "book" }}</h2>
+                <h3 class="book-title">{{ .Params.bookTitle }}</h3>
             {{- else if eq .Params.itemType "postcard" -}}
-                <h1>{{ i18n "aboutTheNeu" }} {{ i18n "postcard" }}</h1>
+                <h2>{{ i18n "aboutTheNeu" }} {{ i18n "postcard" }}</h2>
             {{- else if eq .Params.itemType "other" -}}
-                <h1>{{ i18n "aboutTheFem" }} {{ i18n "other" }}</h1>
+                <h2>{{ i18n "aboutTheFem" }} {{ i18n "other" }}</h2>
             {{- end -}}
 
             {{- if .Params.itemDescription -}}
@@ -54,14 +61,11 @@
           </div>
         {{- end -}}
         </div>
+        {{- if not .Params.metaPage -}}
+            <div class="meta">
+              {{ partial "meta/tags.html" . }}
+            </div>
+        {{ end }}
      </div>
 
-    {{- if not .Params.metaPage -}}
-        <div class="meta">
-          <div class="date">
-              <a href="{{ .RelPermalink }}">{{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}</a>
-          </div>
-          {{ partial "meta/tags.html" . }}
-        </div>
-    {{ end }}
 </div>

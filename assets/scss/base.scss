@@ -7,7 +7,9 @@
 @import "share";
 /* Fonts */
 $font-color-heading: #402913;
-$font-color-body: #1f170f;
+$font-color-title: darken($font-color-heading, 10%);
+$font-color-body: #181716;
+$font-color-link: #68635f;
 $font-face-header: 'DS Behrensschrift';
 $font-face-body: 'Alata Regular';
 /* Colors */
@@ -17,12 +19,18 @@ $content-width: 64em;
 $home-bg-color: #333;
 /* Header and Footer */
 @import "iiif";
+/* Book size settings */
+$book-width: 240px;
+$book-padding: 3rem;
+$book-transition-open: 1s;
+$book-open-scale: 1.05;
 
 body,
 html {
     min-height: 100%;
     margin: 0;
     background-color: $body-bg-color;
+    position: relative;
 }
 
 .header {
@@ -36,11 +44,14 @@ html {
         padding: 0.6em;
 
         .header-title {
-            color: $font-color-heading;
+            color: $font-color-title;
             font-family: $font-face-header;
             font-size: 3em;
             margin-block-start: 0.2em;
             margin-block-end: 0.2em;
+            a {
+                color: $font-color-title;
+            }
         }
 
         .menu {
@@ -52,6 +63,10 @@ html {
     }
 }
 
+.menu .navigation-link {
+    padding-left: 2rem;
+}
+
 .page-wrapper {
     position: relative;
     min-height: 100vh;
@@ -61,29 +76,63 @@ html {
         padding-bottom: 4.6em;
 
         .post {
-            padding: 0.8em;
-            margin: auto;
-            max-width: $content-width;
+            color: invert($font-color-body);
+
+            .content {
+                max-width: $content-width;
+                margin: auto;
+                @media (max-width : $content-width) {
+                    max-width: 100%;
+                }
+
+                .post-body {
+                    margin-block-end: 1em;
+                    padding-bottom: $book-padding;
+                }
+            }
+
+            a,
+            a:active,
+            a:focus,
+            a:hover,
+            a:visited {
+                text-decoration: none;
+                color: invert($font-color-link);
+            }
         }
     }
 }
-/* Book size settings */
-$book-width: 240px;
-$book-height: 320px;
-$book-padding: 3rem;
-$book-transition-open: 1s;
-$book-open-scale: 1.05;
 
-/* Flip Effect: https://codepen.io/Podgro/pen/yeEqPW */
+.header-title {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+}
+
+.post-container {
+    width: 100%;
+}
+
+.post-container,
 .shelf-container {
     background-color: $home-bg-color;
     box-shadow: 0 -.3rem 0.3rem $home-bg-color, 0 0.3rem 0.3rem $home-bg-color;
-    min-height: calc(100vh - 9em);
     padding-top: 1em;
+    min-height: calc(100vh - 9em);
+}
+/* Flip Effect: https://codepen.io/Podgro/pen/yeEqPW */
+.shelf-container {
+    --book-width: #{$book-width};
+    --book-padding: #{$book-padding};
+    @media (max-width : 20em) {
+        --book-width: 9em;
+        --book-padding: 0.8rem;
+    }
 
     .shelf {
         max-width: $content-width;
         margin: auto;
+        @media (max-width : $content-width) {
+            max-width: 100%;
+        }
 
         .book-list {
             padding-inline-start: 0;
@@ -96,11 +145,11 @@ $book-open-scale: 1.05;
             .book-li {
                 position: relative;
                 display: inline-flex;
-                transition: flex-basis linear .5s;
-                flex-basis: $book-width;
+                transition: flex-basis linear 0.5s;
+                flex-basis: var(--book-width);
 
                 &.open {
-                    flex-basis: calc(#{$book-width} * 2 + #{$book-padding} * 2);
+                    flex-basis: calc(var(--book-width) * 2 + var(--book-padding) * 2);
                     /* justify-content: flex-end; */
                     .context {
                         margin: unset;
@@ -114,11 +163,8 @@ $book-open-scale: 1.05;
 
             .context {
                 height: 100%;
-                max-width: $content-width;
                 margin: 0 auto;
-                text-align: center;
                 position: relative;
-
 
                 .tilt {
                     box-sizing: border-box;
@@ -127,227 +173,206 @@ $book-open-scale: 1.05;
                     perspective: 1000px;
                     transform-style: preserve-3d;
                     overflow: visible;
-                    padding: $book-padding;
-                }
-
-            }
-
-            .book-wrap {
-                transition: all ease-out 0.6s;
-                margin: 0 auto;
-                position: relative;
-                transform-style: preserve-3d;
-                height: 100%;
-                width: 100%;
-                backface-visibility: visible;
-                transform: rotateY(0deg);
-
-                &.rotate {
-                    transform: rotateY(20deg);
-                }
-
-                .preview {
-                    box-sizing: border-box;
-                    transform-style: preserve-3d;
-                    transform-origin: left center;
-                    transition: transform 1s ease-in-out .5s;
-                    z-index: 10;
-                }
-
-                .back,
-                .front,
-                .page1,
-                .page2,
-                .page3,
-                .page4,
-                .page5,
-                .page6 {
-
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                    transform-style: preserve-3d;
-                    position: absolute;
-                    width: $book-width;
-                    /*height: 100%;*/
-                    top: 0;
-                    left: 0;
-                    /* Used for Content */
-                    transform-origin: left center;
-                    transition: transform 1s ease-in-out .5s;
-                    transform: rotateY(-0deg) scale(1);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-
-                    .page-content {
-                        padding: 1rem;
-                        backface-visibility: hidden;
-                        /* overflow: hidden; */
-                    }
-                    &.open {
-                        backface-visibility: unset;
-                    }
-                }
-
-                .front,
-                .page1,
-                .page3,
-                .page5 {
-                    border-bottom-right-radius: 0.5em;
-                    border-top-right-radius: 0.5em;
-
-                    .page-content {
-                        transform: rotateY(-180deg);
-                        max-height: inherit;
-                    }
-                }
-
-                .back,
-                .page2,
-                .page4,
-                .page6 {
-                    border-bottom-right-radius: 0.5em;
-                    border-top-right-radius: 0.5em;
-                }
-
-                .page1 {
-                    background-color: darken($body-bg-color, 10%);
-                }
-
-                .page2 {
-                    background-color: darken($body-bg-color, 10%);
-                }
-
-                .page3 {
-                    background-color: darken($body-bg-color, 5%);
-                }
-
-                .page4 {
-                    background-color: darken($body-bg-color, 5%);
-                }
-
-                .page5 {
-                    background-color: $body-bg-color;
-                }
-
-                .page6 {
-                    background-color: $body-bg-color;
-                }
-
-                .preview.open {
-                    transform: rotateY(-165deg) scale($book-open-scale);
-                }
-
-                .page1.open {
-                    transform: rotateY(-155deg) scale($book-open-scale);
-
-                }
-
-                .page2.open {
-                    transform: rotateY(-15deg) scale($book-open-scale);
-
-                }
-
-                .page3.open {
-                    transform: rotateY(-145deg) scale($book-open-scale);
-
-                }
-
-                .page4.open {
-                    transform: rotateY(-25deg) scale($book-open-scale);
-
-                }
-
-                .page5.open {
-                    transform: rotateY(-135deg) scale($book-open-scale);
-
-                }
-
-                .page6.open {
-                    transform: rotateY(-35deg) scale($book-open-scale);
-
+                    padding: var(--book-padding);
                 }
             }
+        }
+    }
+}
 
-            .book-back {
-                content: "";
-                height: 600px;
-                width: 60px;
-                position: absolute;
-                right: 0;
-                left: -401px;
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                background: #AB4747;
-                transform: rotateY(-80deg) translateX(-14px);
+.book-wrap {
+    transition: all ease-out 0.6s;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    backface-visibility: visible;
+    transform: rotateY(0deg);
+
+    &.rotate {
+        transform: rotateY(20deg);
+    }
+    /* Needed for Firefox - otherwise the staking context isn't passed */
+    .book-link {
+        transform-style: preserve-3d;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .preview {
+        box-sizing: border-box;
+        transform-style: preserve-3d;
+        transform-origin: left center;
+        transition: transform 1s ease-in-out 0.5s;
+    }
+
+    .back,
+    .front,
+    .page1,
+    .page2,
+    .page3,
+    .page4,
+    .page5,
+    .page6 {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transform-style: preserve-3d;
+        position: absolute;
+        width: var(--book-width);
+        top: 0;
+        left: 0;
+        /* Used for Content */
+        transform-origin: left center;
+        transition: transform 1s ease-in-out 0.5s;
+        /* Background is used to show title page */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        /* See https://stackoverflow.com/questions/9604982/backface-visibility-not-working-properly-in-firefox-works-in-safari */
+        transform: rotateX(0deg);
+
+        .page-content {
+            padding: 1rem;
+            backface-visibility: hidden;
+            text-align: center;
+            /* This is needed to format the preview on the left opened page */
+            .book-heading {
+                font-size: 1.4em;
+                word-wrap: break-word;
             }
 
-            .book {
-                color: white;
-                width: $book-width;
-                /* height: $book-height; */
-                background-repeat: no-repeat;
-                background-size: auto 100%;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                position: relative;
-
-                .preview {
-                    width: $book-width;
-                }
+            .book-latest {
+                word-wrap: break-word;
             }
+        }
 
-            .book-spine {
-                content: "";
-                /* height: $book-height; */
-                width: 30px;
-                position: absolute;
-                right: 0;
-                left: calc(0px - #{$book-width} - 1px);
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                background: #51361A;
-                transform: rotateY(-80deg) translateX(-14px);
-            }
+        &.open {
+            backface-visibility: unset;
+        }
+    }
 
-            .close-book {
-                display: none;
-                transition: opacity linear 0.5s;
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                right: 0;
-                padding: 0.5em;
-                top: 1em;
-                right: 1em;
-                border: 0;
-                cursor: pointer;
-                background-image: url($close-dark);
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                background-position: center;
-                border: solid rgba(255, 255, 255, .8);
-                border-radius: 50%;
+    .front,
+    .page1,
+    .page3,
+    .page5 {
+        border-bottom-right-radius: 0.5em;
+        border-top-right-radius: 0.5em;
 
-                &:hover {
-                    transform: scale(1.1);
-                    transition: 0.2s;
-                }
-            }
+        .page-content {
+            transform: rotateY(-180deg);
+            max-height: inherit;
+        }
+    }
 
-            .post-content {
-                display: none;
-                /* background-color: $info-bg-color; */
-            }
+    .back,
+    .page2,
+    .page4,
+    .page6 {
+        border-bottom-right-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+    }
 
-            .post-content.active {
-                display: block;
-            }
+    .page1 {
+        background-color: darken($body-bg-color, 10%);
+    }
+
+    .page2 {
+        background-color: darken($body-bg-color, 10%);
+    }
+
+    .page3 {
+        background-color: darken($body-bg-color, 5%);
+    }
+
+    .page4 {
+        background-color: darken($body-bg-color, 5%);
+    }
+
+    .page5 {
+        background-color: $body-bg-color;
+    }
+
+    .page6 {
+        background-color: $body-bg-color;
+        overflow: hidden;
+    }
+
+    .preview.open {
+        transform: rotateY(-165deg) scale($book-open-scale);
+    }
+
+    .page1.open {
+        transform: rotateY(-155deg) scale($book-open-scale);
+    }
+
+    .page2.open {
+        transform: rotateY(-15deg) scale($book-open-scale);
+    }
+
+    .page3.open {
+        transform: rotateY(-145deg) scale($book-open-scale);
+    }
+
+    .page4.open {
+        transform: rotateY(-25deg) scale($book-open-scale);
+    }
+
+    .page5.open {
+        transform: rotateY(-135deg) scale($book-open-scale);
+    }
+
+    .page6.open {
+        transform: rotateY(-35deg) scale($book-open-scale);
+    }
+
+    .book-spine {
+        content: "";
+        width: 30px;
+        position: absolute;
+        right: 0;
+        left: calc(-1px - var(--book-width));
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: #51361A;
+        transform: rotateY(-80deg) translateX(-14px);
+    }
+
+    .close-book {
+        position: absolute;
+        padding: 0.5em;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        background-image: url($close-dark);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: solid rgba(255, 255, 255, .8);
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+    }
+
+    .book {
+        color: white;
+        width: var(--book-width);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative;
+
+        .preview {
+            width: var(--book-width);
         }
     }
 }
@@ -394,7 +419,7 @@ a:focus,
 a:hover,
 a:visited {
     text-decoration: none;
-    color: $font-color-body;
+    color: $font-color-link;
 }
 
 footer.footer {

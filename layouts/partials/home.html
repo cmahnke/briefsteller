@@ -10,34 +10,34 @@
                 {{- $titleThumb = ($title.Resize "330x").RelPermalink -}}
             {{- end -}}
             {{- $frontThumb := $front.Resize "330x" -}}
-
             {{- $large := $front.Resize "1600x" -}}
-            {{- $content := (partial "li.html" .) -}}
+            {{/* TODO: Get latest entry of book section */}}
+            {{- $latest := "" -}}
 
             <li class="book-li">
               <div class="context">
                 <div class="tilt">
                     <div class="book-wrap">
                       <a class="book-link" href="#" data-href="{{ .RelPermalink }}">
-                          <div class="page6 page" style="overflow: hidden; background-image: url({{ $titleThumb }});">
+                          {{/* overflow: hidden; is needed needed to avoid flickering on Chrome */}}
+                          <div class="page6 page" style="background-image: url({{ $titleThumb }});">
                               <div class="page-content">
                                   <div class="close-book"></div>
-                              
                               </div>
                           </div>
                           <div class="page5 page">
-                          <div class="page-content">
-                          {{- if .Params.title -}}
-                              {{- .Params.title | markdownify -}}
-                          {{- end -}}
-                          </div></div>
+                              <div class="page-content">
+                                  {{- if .Params.title -}}
+                                      <h1 class="book-heading">{{- .Params.title | markdownify -}}</h1>
+                                  {{- end -}}
+                                  <div class="book-latest">{{ $latest }}</div>
+                              </div>
+                          </div>
                           <div class="page4 page"></div>
                           <div class="page3 page"></div>
                           <div class="page2 page"></div>
                           <div class="page1 page"></div>
-                          {{/*
-                          <div class="book preview " style="background-image: url({{ $frontThumb.RelPermalink }});" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}"></div>
-                          */}}
+
                           <div class="book preview page" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}">
                               <img class="preview" src="{{ $frontThumb.RelPermalink }}" alt="{{ .Title }}">
                           </div>
@@ -45,7 +45,7 @@
                       </a>
 
                   </div>
-                  <div class="post-content">{{ $content | safeHTML }}</div>
+
               </div>
               </div>
             </li>
@@ -53,28 +53,3 @@
         </ul>
     </div>
 </div>
-{{- $pages := where (where .Site.Pages "Params.displayInList" "!=" false) "Params.type" "eq" "text" -}}
-
-{{- $paginator := .Paginate $pages -}}
-<div class="post-list">
-  {{- range $paginator.Pages  -}}
-      {{ partial "page.html" . }}
-  {{ end }}
-</div>
-{{ if or ($paginator.HasPrev) ($paginator.HasNext) -}}
-  <div class="navi">
-      <div class="pagination">
-          <div>
-            {{ if $paginator.HasNext }}
-              <a class="next" href="{{ $paginator.Next.URL }}">&laquo;Vorige Seite</a>
-            {{ end }}
-            {{- $currentPage := $paginator.PageNumber -}}
-            {{- $totalPages := $paginator.TotalPages -}}
-            <span id="page">Seite {{ $currentPage }} von {{ $totalPages }}</span>
-            {{ if $paginator.HasPrev }}
-              <a class="previous" href="{{ $paginator.Prev.URL }}">Nächste Seite&raquo;</a>
-            {{ end }}
-        </div>
-    </div>
-  </div>
-{{- end }}
