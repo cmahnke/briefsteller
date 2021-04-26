@@ -33,6 +33,15 @@ html {
     position: relative;
 }
 
+.about .post .content {
+    background-position: 97% 1em;
+    background-image: url("/images/cm.svg");
+    background-repeat: no-repeat;
+    .post-body {
+        width: 80%;
+    }
+}
+
 .header {
     width: 100%;
     /* background-color: $frame-bg-color; */
@@ -42,6 +51,11 @@ html {
         width: $content-width;
         margin: auto;
         padding: 0.6em;
+
+        @media (max-width : $content-width) {
+            max-width: 100%;
+            padding: 0 2em;
+        }
 
         .header-title {
             color: $font-color-title;
@@ -77,29 +91,33 @@ html {
 
         .post {
             color: invert($font-color-body);
-
-            .content {
-                max-width: $content-width;
-                margin: auto;
-                @media (max-width : $content-width) {
-                    max-width: 100%;
-                }
-
-                .post-body {
-                    margin-block-end: 1em;
-                    padding-bottom: $book-padding;
-                }
-            }
-
-            a,
-            a:active,
-            a:focus,
-            a:hover,
-            a:visited {
-                text-decoration: none;
-                color: invert($font-color-link);
-            }
         }
+
+        .list-body,
+        .post-body {
+            margin-block-end: 1em;
+            padding-bottom: $book-padding;
+        }
+
+    }
+}
+
+.content {
+    max-width: $content-width;
+    margin: auto;
+
+    a,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: invert($font-color-link);
+    }
+
+    @media (max-width : $content-width) {
+        max-width: 100%;
+        padding: 0 2em;
     }
 }
 
@@ -111,6 +129,7 @@ html {
     width: 100%;
 }
 
+.list-container,
 .post-container,
 .shelf-container {
     background-color: $home-bg-color;
@@ -118,6 +137,7 @@ html {
     padding-top: 1em;
     min-height: calc(100vh - 9em);
 }
+
 /* Flip Effect: https://codepen.io/Podgro/pen/yeEqPW */
 .shelf-container {
     --book-width: #{$book-width};
@@ -132,6 +152,7 @@ html {
         margin: auto;
         @media (max-width : $content-width) {
             max-width: 100%;
+            padding: 0 2em;
         }
 
         .book-list {
@@ -373,32 +394,6 @@ html {
 
         .preview {
             width: var(--book-width);
-        }
-    }
-}
-
-.footer {
-    width: 100%;
-    /* background-color: $footer-bg-color; */
-    .credit {
-        font-weight: 400;
-        margin: auto;
-        padding: 1.5em 1.5em 0.5em;
-        width: $content-width;
-        box-sizing: border-box;
-
-        .colophon {
-            margin: auto;
-            width: 70%;
-            border-top-color: $font-color-body;
-            border-top-width: 1px;
-            border-top-style: solid;
-            margin-top: 1rem;
-
-            p {
-                margin: 0.4rem;
-                text-align: center;
-            }
         }
     }
 }

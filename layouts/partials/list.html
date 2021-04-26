@@ -1,14 +1,12 @@
 {{- $pages := where .RegularPages "Params.displayInList" "!=" false -}}
-{{- $sections := where .Pages "Kind" "Section"  -}}
+{{- $sections := where .Pages "Kind" "section"  -}}
 
-{{ range (union $pages $sections) }}
-    {{ warnf "%s" . }}
-{{ end }}
+{{- $paginator := .Paginate (union $pages $sections) -}}
 
-{{- $paginator := .Paginate $pages -}}
-{{ warnf "%s" $paginator }}
 <div class="list-container post-list">
-    {{- range $paginator.Pages  -}}
-        {{ partial "list-entry.html" . }}
-    {{ end }}
+    <div class="content">
+        {{- range $paginator.Pages  -}}
+            {{ partial "list-entry.html" . }}
+        {{ end }}
+    </div>
 </div>
