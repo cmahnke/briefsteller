@@ -4,9 +4,15 @@
 {{- $paginator := .Paginate (union $pages $sections) -}}
 
 <div class="list-container post-list">
-    <div class="content">
-        {{- range $paginator.Pages  -}}
-            {{ partial "list-entry.html" . }}
-        {{ end }}
-    </div>
+    <div class="open-book">
+        <div class="previous-page-1"></div>
+            <div class="content">
+                {{- range $paginator.Pages  -}}
+                    {{ partial "list-entry.html" . }}
+                {{ end }}
+            </div>
+         <div class="following-page-1"></div>
+         <div class="following-page-2"></div>
+
+     </div>
 </div>

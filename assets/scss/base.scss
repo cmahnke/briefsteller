@@ -1,42 +1,58 @@
 @import "normalize";
 @import "icons";
-@import "fonts/ds-behrensschrift";
 @import "fonts/alata-regular";
-@import "footer";
 @import "ol-iiif";
 @import "share";
+/* Background settings */
+$wood-texture-opacity: 0.8;
+$wood-texture-transform: 'rotate(90 300 300)';
+@import "textures/wood";
+$background: $wood-light;
 /* Fonts */
 $font-color-heading: #402913;
 $font-color-title: darken($font-color-heading, 10%);
 $font-color-body: #181716;
-$font-color-link: #68635f;
-$font-face-header: 'DS Behrensschrift';
+$font-color-link: lighten($font-color-body, 15%);
+
 $font-face-body: 'Alata Regular';
+$font-face-header: 'Alata Regular';
 /* Colors */
 $body-bg-color: #f7f1e8;
+$frame-bg-color: transparent;
+$menu-bg-color: #ab8356;
 /* Content area */
 $content-width: 64em;
-$home-bg-color: #333;
+$home-bg-color: rgb(57, 74, 65);
 /* Header and Footer */
+@import "menu";
+@import "footer";
 @import "iiif";
 /* Book size settings */
 $book-width: 240px;
 $book-padding: 3rem;
 $book-transition-open: 1s;
 $book-open-scale: 1.05;
+$book-spine-color: #3c2b1a;
 
 body,
 html {
     min-height: 100%;
     margin: 0;
-    background-color: $body-bg-color;
     position: relative;
+}
+
+html {
+    background: url($background);
+    background-position: top;
+    /* One needs to add preserveAspectRatio='none' to the SVG to make this work on Safari */
+    background-size: 100% 40%;
 }
 
 .about .post .content {
     background-position: 97% 1em;
     background-image: url("/images/cm.svg");
     background-repeat: no-repeat;
+
     .post-body {
         width: 80%;
     }
@@ -51,34 +67,57 @@ html {
         width: $content-width;
         margin: auto;
         padding: 0.6em;
-
+        margin-bottom: 0.6em;
         @media (max-width : $content-width) {
+            box-sizing: border-box;
             max-width: 100%;
-            padding: 0 2em;
+            margin-left: .5em;
         }
 
-        .header-title {
-            color: $font-color-title;
-            font-family: $font-face-header;
-            font-size: 3em;
-            margin-block-start: 0.2em;
-            margin-block-end: 0.2em;
-            a {
+        .header-content {
+            display: inline-block;
+
+            h1.header-title {
                 color: $font-color-title;
+                font-family: $font-face-header;
+                font-size: 3em;
+                margin-block-start: 0.2em;
+                margin-block-end: 0.2em;
+
+                a {
+                    color: $font-color-title;
+                }
+            }
+            img.header-title {
+                height: 3.5em;
+                margin-top: .5rem;
+                transform: scale(1.1,1);
+                transform-origin: left center;
             }
         }
+
 
         .menu {
             font-family: $font-face-body;
             color: $font-color-body;
-            margin-top: 0.4em;
+            margin-top: 0.6em;
             float: right;
-        }
-    }
-}
+            min-width: 40vw;
 
-.menu .navigation-link {
-    padding-left: 2rem;
+            .navigation-list {
+                padding-right: .6em;
+            }
+
+            @media (max-width : 32em) {
+                min-width: 15vw;
+            }
+
+        }
+
+    }
+    @media (max-width : 64em) {
+        margin-top: .4em;
+    }
 }
 
 .page-wrapper {
@@ -89,22 +128,89 @@ html {
         font-family: $font-face-body;
         padding-bottom: 4.6em;
 
-        .post {
-            color: invert($font-color-body);
-        }
-
         .list-body,
         .post-body {
             margin-block-end: 1em;
             padding-bottom: $book-padding;
         }
+    }
+}
 
+.open-book {
+    max-width: $content-width;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 1em 2em 0 rgba(0, 0, 0, .2);
+
+    .previous-page-1 {
+        position: absolute;
+        content: '';
+        width: 1.6rem;
+        background-image: linear-gradient(to right, $body-bg-color, darken($body-bg-color, 20%), $body-bg-color);
+        left: -1.6rem;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+
+        &:before {
+            background-color: $body-bg-color;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 1;
+            display: block;
+            transform-origin: left center;
+            transform: scale(-50, 1);
+        }
+    }
+
+    .following-page-1 {
+        position: absolute;
+        content: '';
+        border-radius: 0 0.6rem 0.6rem 0;
+        width: 1rem;
+        background-color: darken($body-bg-color, 5%);
+        right: -.4rem;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+    }
+
+    .following-page-2 {
+        position: absolute;
+        content: '';
+        border-radius: 0 0.6rem 0.6rem 0;
+        width: 1rem;
+        background-color: darken($body-bg-color, 10%);
+        right: -.7rem;
+        z-index: 1;
+        height: 100%;
+        top: 0;
+    }
+    @media (max-width : 64em) {
+        .following-page-1,
+        .following-page-2,
+        .previous-page-1 {
+            display: none;
+        }
     }
 }
 
 .content {
     max-width: $content-width;
     margin: auto;
+    background-color: $body-bg-color;
+    border-radius: 0 0.6rem 0.6rem 0;
+    padding: 2rem;
+    z-index: 3;
+    position: sticky;
+    color: $font-color-body;
+
+    .post-title {
+        display: inline-block;
+    }
 
     a,
     a:active,
@@ -112,9 +218,8 @@ html {
     a:hover,
     a:visited {
         text-decoration: none;
-        color: invert($font-color-link);
+        color: $font-color-link;
     }
-
     @media (max-width : $content-width) {
         max-width: 100%;
         padding: 0 2em;
@@ -132,12 +237,14 @@ html {
 .list-container,
 .post-container,
 .shelf-container {
+    border-top: 2px dashed lighten($home-bg-color, 10%);
+    border-bottom: 2px dashed lighten($home-bg-color, 10%);
     background-color: $home-bg-color;
-    box-shadow: 0 -.3rem 0.3rem $home-bg-color, 0 0.3rem 0.3rem $home-bg-color;
-    padding-top: 1em;
+    box-shadow: 0 -.4rem 0.2rem $home-bg-color, 0 0.4rem 0.2rem $home-bg-color;
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
     min-height: calc(100vh - 9em);
 }
-
 /* Flip Effect: https://codepen.io/Podgro/pen/yeEqPW */
 .shelf-container {
     --book-width: #{$book-width};
@@ -200,7 +307,7 @@ html {
         }
     }
 }
-
+/* Page Flip effect: https://codepen.io/dhanishgajjar/pen/bjaYYo */
 .book-wrap {
     transition: all ease-out 0.6s;
     margin: 0 auto;
@@ -213,6 +320,7 @@ html {
 
     &.rotate {
         transform: rotateY(20deg);
+        box-shadow: 0 1em 2em 0 rgba(0, 0, 0, .2);
     }
     /* Needed for Firefox - otherwise the staking context isn't passed */
     .book-link {
@@ -247,7 +355,7 @@ html {
         left: 0;
         /* Used for Content */
         transform-origin: left center;
-        transition: transform 1s ease-in-out 0.5s;
+        transition: transform 1s ease-in-out 0.5s, box-shadow 0.9s ease-in-out;
         /* Background is used to show title page */
         background-size: cover;
         background-repeat: no-repeat;
@@ -272,6 +380,8 @@ html {
 
         &.open {
             backface-visibility: unset;
+            /* TODO: this might be improved - Remove after book is closed */
+            box-shadow: 0 1em 2em 0 rgba(0, 0, 0, .2);
         }
     }
 
@@ -318,6 +428,7 @@ html {
 
     .page6 {
         background-color: $body-bg-color;
+        /* overflow: hidden; is needed needed to avoid flickering on Chrome */
         overflow: hidden;
     }
 
@@ -358,7 +469,8 @@ html {
         top: 0;
         bottom: 0;
         margin: auto;
-        background: #51361A;
+        /* background: #51361A; */
+        background: $book-spine-color;
         transform: rotateY(-80deg) translateX(-14px);
     }
 
@@ -398,8 +510,27 @@ html {
     }
 }
 
+.list-entry {
+    box-sizing: border-box;
+
+    .preview-image {
+        width: 15%;
+        display: inline-block;
+
+        .preview {
+            width: 80px;
+        }
+    }
+
+    .list-content {
+        width: 85%;
+        display: inline-block;
+    }
+}
+
 .date {
     float: right;
+    margin: 0.67em 0;
 }
 
 .content {
@@ -421,7 +552,7 @@ footer.footer {
     position: absolute;
     bottom: 0;
     padding-top: 0.8em;
-    padding-bottom: 0.8em;
+    padding-bottom: 0.5em;
     height: 3em;
     width: 100%;
     font-family: $font-face-body;

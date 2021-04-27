@@ -21,7 +21,7 @@
 
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32.png" | absURL }}" sizes="32x32">
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16.png" | absURL }}" sizes="16x16">
-    {{ if .Site.Params.favicon_svg }}
+    {{ if and .Site.Params.faviconSVG (ne .Site.Params.faviconsvg "") }}
         <link rel="icon" type="image/svg+xml" href="{{ .Site.Params.favicon_svg }}">
     {{ end }}
 
@@ -43,9 +43,7 @@
      {{- if or (hasPrefix .Page.File.Path "about") (hasPrefix .Page.File.Path "/about") -}}
          {{- $class = "about" -}}
      {{- end -}}
-     {{- if .IsHome -}}
-         {{- $class = "home" -}}
-     {{- end -}}
+
      {{- if .Params.metaPage -}}
          {{- $class = printf "%s %s" $class "meta" -}}
      {{- end -}}

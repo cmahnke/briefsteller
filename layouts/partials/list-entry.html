@@ -1,6 +1,19 @@
+{{- $front := .Resources.GetMatch "front*" -}}
+{{- if eq $front nil -}}
+    {{- $front := .CurrentSection.Resources.GetMatch "front*" -}}
+{{- end -}}
+{{- $frontThumb := "" -}}
+{{- if ne $front nil -}}
+    {{- $frontThumb = $front.Resize "330x" -}}
+{{- end -}}
 <div class="list-entry">
     <a href="{{ .RelPermalink }}">
-        <div class="content">
+        {{- if ne $front nil -}}
+            <div class="preview-image">
+                <img class="preview" src="{{ $frontThumb.RelPermalink }}" alt="{{ .Title }}">
+            </div>
+        {{- end -}}
+        <div class="list-content">
             <div class="date">
                 {{- partial "date.html" . -}}
             </div>

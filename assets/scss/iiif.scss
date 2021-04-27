@@ -1,40 +1,43 @@
 /* IIIF */
-.iiif, .book-description-images {
+/* $aspect-ration: 1.42; */
+$aspect-ration: 1.0;
+
+.iiif, .description-images {
     max-width: $content-width;
 
   .viewer {
-    width: $content-width;
+    width: 100%;
     display: block;
     margin: auto;
 
       &.portrait {
-          width: $content-width;
-          height: calc(#{$content-width} * 1.5);
+          width: 100%;
+          height: calc(100vw * #{$aspect-ration});
 
           @media (max-width: 37.5em) {
              width: 85vw;
-             height: calc(85vw * 1.5);
+             height: calc(85vw * #{$aspect-ration});
           }
 
           @media (max-width: 30em) {
              width: 80vw;
-             height: calc(80vw * 1.5);
+             height: calc(80vw * #{$aspect-ration});
           }
 
       }
 
       &.landscape {
-          width: $content-width;
-          height: calc(#{$content-width} / 1.5);
+          width: 100%;
+          height: calc(100vw / #{$aspect-ration});
 
           @media (max-width: 37.5em) {
              width: 85vw;
-             height: calc(85vw / 1.5);
+             height: calc(85vw / #{$aspect-ration});
           }
 
           @media (max-width: 30em) {
              width: 80vw;
-             height: calc(80vw / 1.5);
+             height: calc(80vw / #{$aspect-ration});
           }
       }
 

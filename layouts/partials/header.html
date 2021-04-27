@@ -3,9 +3,13 @@
         <div class="menu">
             {{ partial "menu.html" . }}
         </div>
-        {{- if and .Site.Params.headerLogo (ne .Site.Params.headerLogo "") -}}
-            <a href="/"><img class="header-logo" alt="{{ .Site.Title }}" src="{{ .Site.Params.headerLogo }}"></a>
-        {{- end -}}
-        <h1 class="header-title"><a href="/">{{ .Site.Title }}</a></h1>
+        <div class="header-content">
+            {{- if and .Site.Params.headerLogo (ne .Site.Params.headerLogo "") -}}
+                <a href="/"><img class="header-logo" alt="{{ .Site.Title }}" src="{{ .Site.Params.headerLogo }}"></a>
+            {{- end -}}
+            {{- if and .Site.Params.header (ne .Site.Params.header "") -}}
+                <a href="/" class="header-link"><img class="header-title" alt="{{ .Site.Title }}" src="{{ .Site.Params.header }}"></img></a>
+            {{- end -}}
+        </div>
     </div>
 </header>
