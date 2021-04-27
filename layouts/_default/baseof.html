@@ -39,7 +39,7 @@
     {{ end -}}
 
     {{/* this hack is needed since there seem to be an issue with GitHub doing this on the server side     */}}
-    {{- if not .Site.IsServer-}}
+    {{- if not .Site.IsServer -}}
         <script type="text/javascript">
             if (window.location.protocol != "https:") {
                window.location.protocol = "https";
