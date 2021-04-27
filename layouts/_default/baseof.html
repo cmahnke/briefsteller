@@ -38,15 +38,14 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{/* this hack is needed since there seem to be an issue with GitHub doing this on the server side
+    {{/* this hack is needed since there seem to be an issue with GitHub doing this on the server side     */}}
     {{- if not .Site.IsServer-}}
-        <script>
-            if (location.protocol !== 'https:') {
-                location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        <script type="text/javascript">
+            if (window.location.protocol != "https:") {
+               window.location.protocol = "https";
             }
         </script>
     {{- end -}}
-    */}}
 
   </head>
 
