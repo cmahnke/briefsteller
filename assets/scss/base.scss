@@ -13,7 +13,6 @@ $font-color-heading: #402913;
 $font-color-title: darken($font-color-heading, 10%);
 $font-color-body: #181716;
 $font-color-link: lighten($font-color-body, 15%);
-
 $font-face-body: 'Alata Regular';
 $font-face-header: 'Alata Regular';
 /* Colors */
@@ -24,6 +23,8 @@ $menu-bg-color: #ab8356;
 $content-width: 64em;
 $home-bg-color: rgb(57, 74, 65);
 /* Header and Footer */
+$color-body-text: $font-color-body;
+$secondary-icon-color: $font-color-link;
 @import "menu";
 @import "footer";
 @import "iiif";
@@ -67,11 +68,12 @@ html {
         width: $content-width;
         margin: auto;
         padding: 0.6em;
+        padding-right: 0;
         margin-bottom: 0.6em;
         @media (max-width : $content-width) {
             box-sizing: border-box;
             max-width: 100%;
-            margin-left: .5em;
+
         }
 
         .header-content {
@@ -88,14 +90,18 @@ html {
                     color: $font-color-title;
                 }
             }
+
             img.header-title {
                 height: 3.5em;
-                margin-top: .5rem;
+                margin-top: 0.5rem;
                 transform: scale(1.1,1);
                 transform-origin: left center;
+                @media (max-width : 64em) {
+                    padding-left: 0.6em;
+                }
+
             }
         }
-
 
         .menu {
             font-family: $font-face-body;
@@ -105,18 +111,15 @@ html {
             min-width: 40vw;
 
             .navigation-list {
-                padding-right: .6em;
+                padding-right: 0.6em;
             }
-
             @media (max-width : 32em) {
                 min-width: 15vw;
             }
-
         }
-
     }
     @media (max-width : 64em) {
-        margin-top: .4em;
+        margin-top: 0.4em;
     }
 }
 
@@ -539,6 +542,22 @@ html {
     }
 }
 
+.post-relations {
+    margin: 1.6em;
+    padding: 0.4em 0.3em;
+    display: inline-block;
+    width: fit-content;
+
+    .section-parent {
+        font-weight: bold;
+    }
+
+    ul {
+        padding-inline-start: 2em;
+        margin-block-start: 0.4em;
+    }
+}
+
 a,
 a:active,
 a:focus,
@@ -569,6 +588,86 @@ footer.footer {
             display: block;
             margin-block-start: 0;
             margin-block-end: 0;
+        }
+    }
+}
+
+#menu-toggle {
+    display: none;
+    @media (max-width : 56.25em) {
+        &:checked + label + ul {
+            visibility: visible;
+            opacity: 1;
+            max-height: 100rem;
+            display: block;
+        }
+    }
+}
+
+.menu-button {
+    @media (max-width : 56.25em) {
+        display: inline-block;
+    }
+
+    .menu-icon {
+        content: url($burger-menu-secondary);
+        height: 2em;
+        width: 2em;
+    }
+}
+
+.top-menu {
+    display: inline-block;
+    float: right;
+    width: max-content;
+    position: initial;
+
+    .navigation-list {
+        float: right;
+        position: unset;
+        height: unset;
+        line-height: unset;
+        padding-right: unset;
+        transform: unset;
+        @media (max-width : 56.25em) {
+            visibility: hidden;
+            display: none;
+            position: absolute;
+            top: 5em;
+            right: 0;
+            left: 0;
+            z-index: 10;
+            visibility: hidden;
+            opacity: 0;
+            padding: 0;
+            max-height: 0;
+            width: auto;
+            border-top: 2px dashed lighten($home-bg-color, 10%);
+            border-bottom: 2px dashed lighten($home-bg-color, 10%);
+            transition: opacity 0.25s, max-height 0.15s linear;
+            height: auto;
+            background-color: $home-bg-color;
+            box-shadow: 0 -.4rem 0.2rem $home-bg-color, 0 0.4rem 0.2rem $home-bg-color;
+            padding: 1em;
+
+        }
+
+        .navigation-item {
+            padding-left: unset;
+
+            a,
+            a:active,
+            a:focus,
+            a:hover,
+            a:visited {
+                text-decoration: none;
+                padding: 0 1rem;
+                @media (max-width : 56.25em) {
+                    color: invert($font-color-body);
+                    padding: 0 .4rem;
+                }
+            }
+
         }
     }
 }

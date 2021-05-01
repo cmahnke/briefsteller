@@ -19,7 +19,11 @@
             <div class="post-body">
                 {{ .Content }}
             </div>
-
+            <div class="post-relations">
+                {{- if or (eq .Kind "section") (ne .CurrentSection.Dir "")  -}}
+                    {{- partial "post-relations" . -}}
+                {{- end -}}
+            </div>
 
             {{- if .Params.iiif -}}
                 <div class="iiif">
