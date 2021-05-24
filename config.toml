@@ -11,10 +11,6 @@ ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
 paginate = 8
 
-[params]
-    header = "/images/header.svg"
-    faviconSVG = "/images/logo.svg"
-
 # navigation
 [menu]
     [[menu.main]]

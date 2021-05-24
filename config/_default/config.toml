@@ -1,0 +1,16 @@
+[params]
+    header = "/images/header.svg"
+    faviconSVG = "/images/logo.svg"
+
+    [params.preview]
+        outputPrefix = "ogPreview-overlay"
+        outputSuffix = ".png"
+        format =  "svg"
+        image = "front.png"
+        source = "overlay"
+        [params.preview.size]
+            height = 630
+            width = 1200
+        [params.preview.svg]
+            template = "./Source Files/Other/preview-template.svg"
+            scale = "width"
