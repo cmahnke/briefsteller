@@ -4,7 +4,6 @@
   <head>
     <meta charset="utf-8">
 
-
     {{ partial "html/head/meta.html" . }}
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
@@ -22,21 +21,12 @@
 
     {{/* External Styles - Fonts etc */}}
     {{ range .Site.Params.stylesheets -}}
-    <link href="{{ . }}" rel="stylesheet">
+        <link href="{{ . }}" rel="stylesheet">
     {{- end -}}
 
     {{ range .AlternativeOutputFormats -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
-
-    {{/* this hack is needed since there seem to be an issue with GitHub doing this on the server side     */}}
-    {{- if not .Site.IsServer -}}
-        <script type="text/javascript">
-            if (window.location.protocol != "https:") {
-               window.location.protocol = "https";
-            }
-        </script>
-    {{- end -}}
 
   </head>
 
