@@ -4,6 +4,7 @@ patches
 docs
 static/images/favicon*
 static/images/background.jpg
+static/pdfjs/**
 resources
 content/post/*/front/
 content/post/*/title/
