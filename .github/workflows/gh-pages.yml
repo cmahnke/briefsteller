@@ -59,7 +59,7 @@ jobs:
           ./scripts/setup.sh
 
       - name: Build Hugo site
-        run: hugo --i18n-warnings
+        run: hugo --printI18nWarnings
 
       - name: Validate JSON
         env:
