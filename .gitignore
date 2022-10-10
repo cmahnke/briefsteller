@@ -2,6 +2,7 @@ package.json
 node_modules
 patches
 docs
+.hugo_build.lock
 static/images/favicon*
 static/images/background.jpg
 static/pdfjs/**
