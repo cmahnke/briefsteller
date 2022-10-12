@@ -1,4 +1,4 @@
-name: github pages
+name: Publish on GitHub pages
 
 on:
   push:
@@ -59,7 +59,7 @@ jobs:
           ./scripts/setup.sh
 
       - name: Build Hugo site
-        run: hugo --printI18nWarnings --printUnusedTemplates 
+        run: hugo --printI18nWarnings --printUnusedTemplates
 
       - name: Validate JSON
         env:
