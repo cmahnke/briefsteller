@@ -4,6 +4,6 @@
   "scripts": {
     "header": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Logo/Header.svg -o static/images/header.svg",
     "logo": "svgo -i Source\\ Files/Logo/Logo.svg -o static/images/logo.svg",
-    "svgo": "yarn run logo \u0026\u0026 yarn run header"
+    "svgo": "yarn run logo && yarn run header"
   }
 }
