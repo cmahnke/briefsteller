@@ -64,6 +64,9 @@ jobs:
         run: |
           yarn run validate
 
+      - name: Puppeteer
+        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
+
       - name: Cleanup disk
         run: |
           df -h
@@ -71,9 +74,6 @@ jobs:
           rm -rf node_modules
           rm -rf content
           df -h
-
-      - name: Puppeteer
-        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v3.8.0
