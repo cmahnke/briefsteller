@@ -15,3 +15,4 @@ content/post/*/img*/
 content/post/*/page*/
 static/images/header.svg
 static/images/logo.*
+**/.DS_Store
