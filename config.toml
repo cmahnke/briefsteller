@@ -10,6 +10,7 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
 paginate = 8
+Copyright = "Projektemacher"
 
 # navigation
 [menu]
