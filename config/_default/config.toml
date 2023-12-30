@@ -4,6 +4,7 @@
     copyrightYears = "2021 - 2023"
     copyright = "Projektemacher"
     disableScale = true
+    description = "Briefe aus alten Briefstellern"
 
     [params.preview]
         outputPrefix = "ogPreview-overlay"
