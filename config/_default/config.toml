@@ -5,6 +5,7 @@
     copyright = "Projektemacher"
     disableScale = true
     description = "Briefe aus alten Briefstellern"
+    debug = false
 
     [params.preview]
         outputPrefix = "ogPreview-overlay"

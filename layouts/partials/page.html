@@ -20,6 +20,7 @@
                 {{ .Content }}
             </div>
             <div class="post-relations">
+              {{/* TODO: Fix this for Hugo 0.123 */}}
                 {{- if or (eq .Kind "section") (ne .CurrentSection.File.Dir "")  -}}
                     {{- partial "post-relations" . -}}
                 {{- end -}}
