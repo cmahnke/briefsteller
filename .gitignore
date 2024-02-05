@@ -17,3 +17,5 @@ static/images/header.svg
 static/images/logo.*
 **/.DS_Store
 **/vips-properties.xml
+assets/css/fonts
+static/fonts
