@@ -24,8 +24,30 @@ Copyright = "Projektemacher"
         URL = "/about"
         weight = 2
 
-[markup.goldmark.renderer]
-  unsafe= true
+[markup]
+defaultMarkdownHandler = 'goldmark'
+
+[markup.goldmark]
+    [markup.goldmark.renderer]
+        unsafe= true
+
+    [markup.goldmark.extensions]
+        #typographer = true
+        attribute = true
+        strikethrough = true
+
+  [markup.goldmark.extensions.typographer]
+          apostrophe = '&rsquo;'
+          disable = false
+          ellipsis = '&hellip;'
+          emDash = '&mdash;'
+          enDash = '&ndash;'
+          leftAngleQuote = '&laquo;'
+          leftDoubleQuote = '&ldquo;'
+          leftSingleQuote = '&lsquo;'
+          rightAngleQuote = '&raquo;'
+          rightDoubleQuote = '&rdquo;'
+          rightSingleQuote = '&rsquo;'
 
 [imaging]
     quality = 95
