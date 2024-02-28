@@ -20,7 +20,7 @@ Tags mit weniger als drei Vorkommen werden hier nicht angezeigt.
 
 Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert.
 
-Als Schriftarten kommen die [Lateinische Ausgangsschrift](https://de.wikipedia.org/wiki/Ausgangsschrift#Lateinische_Ausgangsschrift) für die Titelzeile (die Schrift, die der Autor un der Schule gelernt hat und noch heute für seine Briefe verwendet) und [Alata](https://github.com/SorkinType/Alata) zum Einsatz.
+Als Schriftarten kommen die [Lateinische Ausgangsschrift](https://de.wikipedia.org/wiki/Ausgangsschrift#Lateinische_Ausgangsschrift) für die Titelzeile (die Schrift, die der Autor in der Schule gelernt hat und noch heute für seine Briefe verwendet) und [Alata](https://github.com/SorkinType/Alata) zum Einsatz.
 
 Die folgenden JavaScript und CSS Frameworks werden benutzt:
 * [jQuery](https://jquery.com/)
