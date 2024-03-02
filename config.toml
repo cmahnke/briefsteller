@@ -55,6 +55,9 @@ defaultMarkdownHandler = 'goldmark'
 [outputs]
     page = ["HTML", "JSON"]
 
+[sitemap]
+  changeFreq = 'weekly'
+
 [module]
     [[module.mounts]]
         source = "assets/scss"
