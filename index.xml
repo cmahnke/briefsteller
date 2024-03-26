@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Briefsteller</title>
+    <link>https://briefsteller.de/</link>
+    <description>Recent content on Briefsteller</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <copyright>Projektemacher</copyright>
+    <lastBuildDate>Sun, 07 Feb 2021 13:04:53 +0200</lastBuildDate><atom:link href="https://briefsteller.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Über dieses Blog</title>
+      <link>https://briefsteller.de/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://briefsteller.de/about/</guid>
+      <description>Bevor es YouTube Tutorials über Umgangsformen und Mails schreiben gab, wurde diese Aufgabe von Briefstellern, vielleicht einer der ersten Gattungen von Ratgeberliteratur, erledigt. Bevor das Telefon (oder hochmoderne Verfahren zur schriftlichen Kommunikation wie das Telegramm, der Fernschreiber oder gar das Fax) erfunden wurden, waren Briefe und vielleicht noch Postkarten das Mittel zur Telekommunikation. Damit bei diesen schriftlichen Kommunikation auch die Form gewahrt bleibt und man nicht mit vermeidbaren Peinlichkeiten seine Ehre riskiert, gab es eine besondere Gattung von Büchern, die Musterbriefe für verschiedene Situationen beinhalteten: Die Briefsteller.</description>
+    </item>
+    
+  </channel>
+</rss>
