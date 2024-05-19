@@ -19,3 +19,4 @@ static/images/logo.*
 **/vips-properties.xml
 assets/css/fonts
 static/fonts
+data/stats.json
