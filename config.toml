@@ -70,3 +70,6 @@ defaultMarkdownHandler = 'goldmark'
     [[module.mounts]]
         source = "assets/js"
         target = "assets/js"
+
+[build]
+  writeStats = true
