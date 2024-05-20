@@ -11,6 +11,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
 paginate = 8
 Copyright = "Projektemacher"
+enableGitInfo = true
 
 # navigation
 [menu]
