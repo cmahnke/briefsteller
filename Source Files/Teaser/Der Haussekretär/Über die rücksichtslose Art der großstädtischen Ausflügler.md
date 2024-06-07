@@ -8,29 +8,29 @@ Mein lieber Freund Fuchs!
 
 
 Mit gemischten Gefühlen habe ich Deine Karte gelesen, in der Du mir mitteilst, daß
-am nächsten sonntag gegen fünfhundert Menschen aus Eurer stadt zu uns in unsern stillen
-Wald- und Feldfrieden kommen wollen, um hier das sommerfest des Vereins zu feiern.
-Nimm es mir nicht übel! Aber nach meinen Erfahrungen betragen sich viele, viele städter
+am nächsten sonntag gegen fünfhundert Menschen aus Eurer Stadt zu uns in unsern stillen
+Wald- und Feldfrieden kommen wollen, um hier das Sommerfest des Vereins zu feiern.
+Nimm es mir nicht übel! Aber nach meinen Erfahrungen betragen sich viele, viele Städter
 auf dem Lande nicht so, daß sie von un8 Landbewohnern gern gesehen werden.
 
 Man sieht sie oft noch nicht, aber man hört sie schon von weitem mit lautem
-Getöse kommen, überlustige Gesellschaften, denen jeder strauch im Wege ist, deren Kinder
+Getöse kommen, überlustige Gesellschaften, denen jeder Strauch im Wege ist, deren Kinder
 jeden Zweig knicken und jeden Frosch mit lautem Gejohle zertreten müssen! Diese Menschen
 können ohne Getöse nicht leben, sie haben absolut gar kein Interesse an der schönen Natur,
 der Reiz stillen Waldesfriedens ist und bleibt ihnen ewig fremd, Kegelbahn und Zechgelage
-sind ihnen oft die Hauptsache, und wenn sie abends schwankenden scrittes nach Hause
+sind ihnen oft die Hauptsache, und wenn sie abends schwankenden Schrittes nach Hause
 wanken, dann haben sie ihr Tagewerk vollbracht. Wie viele stimmen haben sich aus der
-Land- - und zur Ehre sei's gesagt - auch stadtbevölkerung heraus schon vernehmen lassen
-und den störenfrieden harmloser sonntagsfreuden, den falschen Naturfreunden unter den
+Land- - und zur Ehre sei's gesagt - auch Stadtbevölkerung heraus schon vernehmen lassen
+und den Störenfrieden harmloser Sonntagsfreuden, den falschen Naturfreunden unter den
 Ausflüglern Moralpauken gehalten?! Verlorene Liebesmüh'! Die vielen „Ausnahmen“ unter-
 den wahren ernsten Naturfreunden werden eben nicht alle, und neben den Elementen, die
-überhaupt nicht besserungsfähig sind, gibt es leider auch solche, deren halbwegs gute sitten
+überhaupt nicht besserungsfähig sind, gibt es leider auch solche, deren halbwegs gute Sitten
 durch schlechte Beispiele verdorben werden, auf die das wüste Treiben jener anderen an-
 steckend wirkt und sie zu gleich unlöblichem Tun fortreißt.
 
 Das sind Leute, denen man noch ins Gewissen reden kann, und um derentwillen ich
 meine Zeilen Dir sende. Du kannst als Vereinsvorstand viel auf die Mitglieder und ihre
-Angehörigen einwirken. Von vielen sonntagsausflüglern kann man mit Recht behaupten:
+Angehörigen einwirken. Von vielen Sonntagsausflüglern kann man mit Recht behaupten:
 sie wissen nicht, was sie tun, wenn sie gedankenlos die Roheiten schlechter Vorbilder nach-
 ahmen, wenn sie, anstatt in harmloser Lustigkeit zu genießen, schreien und johlen, wenn
 sie, anstatt mit Maß die trockenen Kehlen zu befeuchten, Zechgelage veranstalten, wenn sie
