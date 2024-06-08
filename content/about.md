@@ -38,3 +38,7 @@ Die Seite wird von [GitHub](https://github.com/) gehosted.
 "Briefsteller" ist ein [Projekt](https://projektemacher.org) von **[Christian Mahnke](https://christianmahnke.de/)**.
 
 Kontakt ist via [E-Mail](mailto:briefsteller@projektemacher.org) möglich.
+
+# Datenschutzerklärung
+
+Die Datenschutzerklärung ist [hier](/privacy) verfügbar.
