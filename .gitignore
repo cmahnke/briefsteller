@@ -25,3 +25,4 @@ data/stats.json
 **/out_*.wav
 **/sentences.lst
 **/silence-*.wav
+core
