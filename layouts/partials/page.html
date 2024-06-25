@@ -20,7 +20,7 @@
                 </a>
               </div>
             {{- end -}}
-            {{- if and .Params.audio -}}
+            {{- if .Params.audio -}}
               {{- $audio := .Resources.GetMatch "audio" -}}
               {{- with $audio -}}
                 {{- $src := .RelPermalink -}}

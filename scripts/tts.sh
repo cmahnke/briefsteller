@@ -38,4 +38,7 @@ do
     ffmpeg -y -f concat -i $DIR/sentences.lst -c copy $DIR/out.wav
     ffmpeg -y -i $DIR/out.wav -vn -ar 44100 -ac 2 -b:a 128k $DIR/out.mp3
     rm $DIR/out.wav $DIR/sentences.lst
+    for f in $DIR/out_*.wav; do
+      rm $f
+    done
 done

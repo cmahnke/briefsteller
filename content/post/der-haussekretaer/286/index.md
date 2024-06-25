@@ -22,7 +22,7 @@ Mit gemischten Gefühlen habe ich Deine Karte gelesen, in der Du mir mitteilst, 
 am nächsten sonntag gegen fünfhundert Menschen aus Eurer Stadt zu uns in unsern stillen
 Wald- und Feldfrieden kommen wollen, um hier das Sommerfest des Vereins zu feiern.
 Nimm es mir nicht übel! Aber nach meinen Erfahrungen betragen sich viele, viele Städter
-auf dem Lande nicht so, daß sie von un8 Landbewohnern gern gesehen werden.
+auf dem Lande nicht so, daß sie von uns Landbewohnern gern gesehen werden.
 
 Man sieht sie oft noch nicht, aber man hört sie schon von weitem mit lautem
 Getöse kommen, überlustige Gesellschaften, denen jeder Strauch im Wege ist, deren Kinder
