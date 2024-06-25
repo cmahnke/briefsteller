@@ -20,3 +20,4 @@ static/images/logo.*
 assets/css/fonts
 static/fonts
 data/stats.json
+**/*.-tts.json
