@@ -135,6 +135,10 @@ html {
         .post-body {
             margin-block-end: 1em;
             padding-bottom: $book-padding;
+
+            &.letter {
+              padding-top: 3rem;
+            }
         }
     }
 }

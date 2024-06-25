@@ -20,7 +20,15 @@
                 </a>
               </div>
             {{- end -}}
-            <div class="post-body">
+            {{- if and .Params.type (ne .Params.type "") -}}
+
+
+            {{- end -}}
+            {{- $contentClass := "" -}}
+            {{- if .Params.type -}}
+              {{- $contentClass = .Params.type -}}
+            {{- end -}}
+            <div class="post-body {{ $contentClass | safeCSS }}">
               {{ .Content }}
             </div>
             {{- if and (eq .Kind "section") (gt (len .Pages) 0) -}}
