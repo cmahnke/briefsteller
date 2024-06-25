@@ -3,7 +3,7 @@ title: "Über die rücksichtslose Art der großstädtischen Ausflügler."
 date: 2024-06-25T13:04:53+02:00
 type: letter
 iiifContext: http://iiif.io/api/image/2/context.json
-audio: true
+audio: "286.mp3"
 resources:
 - name: audio
   src: "286.mp3"
