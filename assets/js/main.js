@@ -2,6 +2,8 @@ window.$ = window.jQuery = require('jquery');
 
 require('./iiif-image-viewer');
 
+import { audioplayer } from './audioplayer';
+
 function addRotate(nodes) {
     nodes.hover(function(){
       $(this).addClass('rotate');

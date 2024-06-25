@@ -20,9 +20,12 @@
                 </a>
               </div>
             {{- end -}}
-            {{- if and .Params.type (ne .Params.type "") -}}
-
-
+            {{- if and .Params.audio -}}
+              {{- $audio := .Resources.GetMatch "audio" -}}
+              {{- with $audio -}}
+                {{- $src := .RelPermalink -}}
+                {{- partial "media/audioplayer.html" (dict "context" . "src" $src "autoplay" false) -}}
+              {{- end -}}
             {{- end -}}
             {{- $contentClass := "" -}}
             {{- if .Params.type -}}

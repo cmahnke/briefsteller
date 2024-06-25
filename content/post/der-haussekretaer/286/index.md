@@ -3,15 +3,14 @@ title: "Über die rücksichtslose Art der großstädtischen Ausflügler."
 date: 2024-06-25T13:04:53+02:00
 type: letter
 iiifContext: http://iiif.io/api/image/2/context.json
-audio: ""
-draft: true
+audio: true
 resources:
 - name: audio
   src: "286.mp3"
 ---
 
 # Über die rücksichtslose Art der großstädtischen Ausflügler.
-
+<pre>
 Brief eines Landbewohners an einen Freund in der Stadt.
 
 Kein-Erland, den .. Juli .
@@ -79,3 +78,4 @@ lich nicht übel nimmst, bin ich
 Dein alter Freund ;
 Gisbert Dachsburg,
 Förster.
+</pre>

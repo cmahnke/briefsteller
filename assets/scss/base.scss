@@ -1,6 +1,7 @@
 @import "normalize";
 @import "icons";
 @import "fonts/alata-regular";
+@import "hugo-fonts";
 @import "ol-iiif";
 @import "share";
 /* Background settings */
@@ -27,6 +28,7 @@ $color-body-text: $font-color-body;
 $secondary-icon-color: $font-color-link;
 @import "menu";
 @import "footer";
+@import "audioplayer";
 @import "iiif";
 /* Book size settings */
 $book-width: 240px;
@@ -138,6 +140,17 @@ html {
 
             &.letter {
               padding-top: 3rem;
+
+              pre {
+                margin-top: 2.6rem;
+                font-weight: 400;
+                font-size: 1.2rem;
+                @media (max-width : 64em) {
+                  font-size: 1.8vw;
+                }
+
+                font-family: 'Playwrite DE LA Variable', cursive;
+              }
             }
         }
     }
@@ -679,4 +692,9 @@ footer.footer {
 p.small {
     font-size: smaller;
     text-align: end;
+}
+
+.audioplayer {
+  padding-top: 2.6rem;
+  margin: 2.6rem 0;
 }
