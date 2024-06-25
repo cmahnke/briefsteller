@@ -39,6 +39,7 @@ def processSingle(post: Post, speaker: int, out: pathlib.Path):
             text = ""
             nr += 1
         text += line
+    texts.append({"text": text, "speaker_id": speaker, "output_file": os.path.join(os.path.dirname(out), f"out_{str(nr).zfill(3)}.wav")})
 
 #    ttsJson = {"speaker_id": speaker, "text": text}
     with open(out, 'w') as f:
@@ -49,10 +50,10 @@ def processSingle(post: Post, speaker: int, out: pathlib.Path):
 
 def main() -> int:
     parser = argparse.ArgumentParser(prog='md2ttsJSON.py')
-    parser.add_argument('--post', '-p', type=pathlib.Path, help='Path to post to process')
-    parser.add_argument('--out', '-o', type=pathlib.Path, help='Path to output directory')
+    parser.add_argument('-p', '--post', type=pathlib.Path, help='Path to post to process')
+    parser.add_argument('-o', '--out', type=pathlib.Path, help='Path to output directory')
 #    parser.add_argument('--model', '-m', type=str, help='Model')
-    parser.add_argument('--speaker', '-s', type=int, help='Speaker')
+    parser.add_argument('-s', '--speaker', type=int, help='Speaker')
 
     args = parser.parse_args()
 

@@ -7,7 +7,7 @@ audio: ""
 draft: true
 resources:
 - name: audio
-  src: "out"
+  src: "286.mp3"
 ---
 
 # Über die rücksichtslose Art der großstädtischen Ausflügler.
@@ -51,7 +51,6 @@ nung des Ganzen womöglich eine solenne Prügelei veranstalten und dann wirklich
 abends noch „ruhestörend“ nach Hause pilgern! . . . . Ja, sie wissen nicht, was sie tun
 - und darum ist es wirklich angebracht, es ihnen immer wieder zu sagen. . . . . Die Ver-
 wüstungen, die diese Herrschaften in der von ihnen angeblich so geliebten „Natur“ anrichten,
-
 verdienen noch eine besondere Würdigung. Auch hier geschieht meines Erachtens alles -
 soweit eben „anständige“ Elemente in Betracht kommen - rein aus Gedankenlosigkeit. . .
 Oder gehört es zu dem Ausdruck der Liebesempfindungen, wenn ein Jüngling, die schlanke
