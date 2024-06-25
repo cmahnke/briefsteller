@@ -26,21 +26,25 @@ def processSingle(post: Post, speaker: int, out: pathlib.Path):
     else:
         return
     cprint(f"Creating {out}", 'green')
+    texts = []
     text = ""
+    nr = 1
     for line in content.splitlines():
         if line.endswith('-'):
             line = line[:-1]
         if emptyLinePattern.match(line):
-            pass
+            parser = MarkdownIt(renderer_cls=RendererPlain)
+            text = parser.render(text)
+            texts.append({"text": text, "speaker_id": speaker, "output_file": os.path.join(os.path.dirname(out), f"out_{str(nr).zfill(3)}.wav")})
+            text = ""
+            nr += 1
         text += line
 
-    parser = MarkdownIt(renderer_cls=RendererPlain)
-    text = parser.render(text)
-
-    ttsJson = {"speaker_id": speaker, "text": text}
+#    ttsJson = {"speaker_id": speaker, "text": text}
     with open(out, 'w') as f:
-        json.dump(ttsJson, f)
-#{ "text": "First speaker.", "speaker_id": 0, "output_file": "/tmp/speaker_0.wav" }
+        for sentence in texts:
+            json.dump(sentence, f)
+            print("", file=f)
 
 
 def main() -> int:
