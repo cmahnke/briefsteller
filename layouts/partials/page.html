@@ -5,37 +5,35 @@
     <div class="open-book">
         <div class="previous-page-1"></div>
         <div class="content">
+            {{/*
             {{- if not .Params.metaPage -}}
-                <div class="date">
-                    {{- .Date | time.Format ":date_full" -}}
-                    {{/*
-                        {{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}
-                    */}}
-                </div>
+              <div class="date">
+                {{- .Date | time.Format ":date_full" -}}
+              </div>
             {{- end -}}
+            */}}
             <h1 class="post-title">{{ .Title }}</h1>
             {{- if not .Params.metaPage -}}
-                <div class="date">
-                    <a href="{{ .RelPermalink }}">
-                        {{/*
-                            {{- partial "date.html" . -}}
-                        */}}
-                        {{- .Date | time.Format ":date_full" -}}
-                    </a>
-                </div>
+              <div class="date">
+                <a href="{{ .RelPermalink }}">
+                  {{- .Date | time.Format ":date_full" -}}
+                </a>
+              </div>
             {{- end -}}
             <div class="post-body">
-                {{ .Content }}
+              {{ .Content }}
             </div>
-            <div class="post-relations">
-              {{- $currentSectionDir := "" -}}
-              {{- if and (ne .CurrentSection.File nil) (ne .CurrentSection.File.Dir nil) -}}
-                {{- $currentSectionDir = .CurrentSection.File.Dir -}}
-              {{- end -}}
-              {{- if or (eq .Kind "section") (ne $currentSectionDir "")  -}}
-                {{- partial "post-relations" . -}}
-              {{- end -}}
-            </div>
+            {{- if and (eq .Kind "section") (gt (len .Pages) 0) -}}
+              <div class="post-relations">
+                {{- $currentSectionDir := "" -}}
+                {{- if and (ne .CurrentSection.File nil) (ne .CurrentSection.File.Dir nil) -}}
+                  {{- $currentSectionDir = .CurrentSection.File.Dir -}}
+                {{- end -}}
+                {{- if or (eq .Kind "section") (ne $currentSectionDir "") -}}
+                  {{- partial "post-relations" . -}}
+                {{- end -}}
+              </div>
+            {{- end -}}
 
             {{- if .Params.iiif -}}
                 <div class="iiif">
