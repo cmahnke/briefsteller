@@ -33,6 +33,10 @@ Für die Darstellung der Digitalisate von Einzelbildern wird [OpenLayers](https:
 
 Die Seite wird von [GitHub](https://github.com/) gehosted.
 
+## Text to Speech (TTS)
+
+Die Sprachbeiträge wurden mit [Piper](https://github.com/rhasspy/piper) erstellt. Als Spachmodell kommt [Thorsten-Voice](https://www.thorsten-voice.de/) (Variante "Emotional") von Thorsten Müller zum Einsatz.
+
 # Kontakt
 
 "Briefsteller" ist ein [Projekt](https://projektemacher.org) von **[Christian Mahnke](https://christianmahnke.de/)**.
