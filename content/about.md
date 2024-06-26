@@ -35,7 +35,7 @@ Die Seite wird von [GitHub](https://github.com/) gehosted.
 
 ## Text to Speech (TTS)
 
-Die Sprachbeiträge wurden mit [Piper](https://github.com/rhasspy/piper) erstellt. Als Spachmodell kommt [Thorsten-Voice](https://www.thorsten-voice.de/) (Variante "Emotional") von Thorsten Müller zum Einsatz.
+Die Sprachbeiträge wurden mit [Piper](https://github.com/rhasspy/piper) erstellt. Als Sprachmodell kommt [Thorsten-Voice](https://www.thorsten-voice.de/) (Variante "Emotional") von Thorsten Müller zum Einsatz.
 
 # Kontakt
 
