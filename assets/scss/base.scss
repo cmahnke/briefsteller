@@ -155,6 +155,17 @@ html {
               }
             }
         }
+
+        .post-description.letter {
+          padding: 1rem;
+          margin-top: 2rem;
+          transform: rotate(-6deg);
+          max-width: 50vw;
+          width: 40%;
+          float: left;
+          /* See https://stackoverflow.com/a/53427262 */
+          background: conic-gradient(from 90deg at 2px 2px, white 90deg,#0000 0) calc(-1 * 2px) calc(-1 * 2px) / calc(100% / 16) calc(100% / 4);
+        }
     }
 }
 

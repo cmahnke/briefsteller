@@ -20,6 +20,16 @@
                 </a>
               </div>
             {{- end -}}
+            {{- $contentClass := "" -}}
+            {{- if .Params.type -}}
+              {{- $contentClass = .Params.type -}}
+            {{- end -}}
+            {{- if .Params.description -}}
+              <div class="post-description {{ $contentClass | safeCSS }}">
+                {{- .Params.description | markdownify | safeHTML -}}
+                </div>
+            {{- end -}}
+            
             {{- if ne (.Resources.GetMatch "audio") nil -}}
               {{- $audio := .Resources.GetMatch "audio" -}}
               {{- with $audio -}}
@@ -27,10 +37,7 @@
                 {{- partial "media/audioplayer.html" (dict "context" . "src" $src "autoplay" false) -}}
               {{- end -}}
             {{- end -}}
-            {{- $contentClass := "" -}}
-            {{- if .Params.type -}}
-              {{- $contentClass = .Params.type -}}
-            {{- end -}}
+
             <div class="post-body {{ $contentClass | safeCSS }}">
               {{ .Content }}
             </div>
@@ -58,7 +65,8 @@
                 </div>
             {{- end -}}
 
-            {{- if and .Params.type (or .Params.description .Params.bookTitle) -}}
+            {{/* TODO: Check if this is still needed */}}
+            {{- if and .Params.type (or .Params.description .Params.bookTitle) (ne .Params.type "letter") -}}
                 {{- partial (printf "media/%s.html" .Params.type ) . -}}
             {{- end -}}
 

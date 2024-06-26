@@ -21,7 +21,8 @@ def processSingle(post: Post, speaker: int, out: pathlib.Path):
 
     path = post.path
     description = ""
-    if 'audio' in metadata:
+
+    if post.getResourcesByType('audio') is not None:
         audio = True
     else:
         return
@@ -30,6 +31,7 @@ def processSingle(post: Post, speaker: int, out: pathlib.Path):
     text = ""
     nr = 1
     for line in content.splitlines():
+        line = line.replace('<!--more-->', '')
         if line.endswith('-'):
             line = line[:-1]
         if emptyLinePattern.match(line):
