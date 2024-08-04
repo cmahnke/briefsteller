@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Briefsteller</title>
+    <link>https://briefsteller.de/</link>
+    <description>Recent content on Briefsteller</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <copyright>Projektemacher</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 13:04:53 +0200</lastBuildDate><atom:link href="https://briefsteller.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Über die rücksichtslose Art der großstädtischen Ausflügler.</title>
+      <link>https://briefsteller.de/post/der-haussekretaer/286/</link>
+      <pubDate>Tue, 25 Jun 2024 13:04:53 +0200</pubDate>
+      
+      <guid>https://briefsteller.de/post/der-haussekretaer/286/</guid>
+      <description>Über die rücksichtslose Art der großstädtischen Ausflügler. Brief eines Landbewohners an einen Freund in der Stadt. Kein-Erland, den .. Juli . Mein lieber Freund Fuchs! Mit gemischten Gefühlen habe ich Deine Karte gelesen, in der Du mir mitteilst, daß am nächsten sonntag gegen fünfhundert Menschen aus Eurer Stadt zu uns in unsern stillen Wald- und Feldfrieden kommen wollen, um hier das Sommerfest des Vereins zu feiern. Nimm es mir nicht übel!</description>
+      
+        <enclosure url="https://briefsteller.de//post/der-haussekretaer/286/286.mp3" length="4789019" type="audio/mpeg" /></item>
+    
+    <item>
+      <title>Datenschutzerklärung</title>
+      <link>https://briefsteller.de/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://briefsteller.de/privacy/</guid>
+      <description>Hosting Der Hoster erhebt in sog. Logfiles folgende Daten, die Ihr Browser übermittelt:
+IP-Adresse Die Adresse der vorher besuchten Website (Referer [sic!] Anfrage-Header) Datum und Uhrzeit der Anfrage Zeitzonendifferenz zur Greenwich Mean Time Inhalt der Anforderung HTTP-Statuscode Übertragene Datenmenge Website, von der die Anforderung kommt Informationen zu Browser und Betriebssystem Das ist erforderlich, um die Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten. Dies entspricht berechtigtem Interesse im Sinne des Art.</description>
+      </item>
+    
+    <item>
+      <title>Über dieses Blog</title>
+      <link>https://briefsteller.de/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://briefsteller.de/about/</guid>
+      <description>Bevor es YouTube Tutorials über Umgangsformen und Mails schreiben gab, wurde diese Aufgabe von Briefstellern, vielleicht einer der ersten Gattungen von Ratgeberliteratur, erledigt. Bevor das Telefon (oder hochmoderne Verfahren zur schriftlichen Kommunikation wie das Telegramm, der Fernschreiber oder gar das Fax) erfunden wurden, waren Briefe und vielleicht noch Postkarten das Mittel zur Telekommunikation. Damit bei diesen schriftlichen Kommunikation auch die Form gewahrt bleibt und man nicht mit vermeidbaren Peinlichkeiten seine Ehre riskiert, gab es eine besondere Gattung von Büchern, die Musterbriefe für verschiedene Situationen beinhalteten: Die Briefsteller.</description>
+      </item>
+    
+  </channel>
+</rss>
