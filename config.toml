@@ -25,8 +25,36 @@ enableGitInfo = true
         URL = "/about"
         weight = 2
 
+[mediaTypes]
+  [mediaTypes."application/ld+json"]
+    suffixes = ["json"]
+  [mediaTypes."image/jxl"]
+    suffixes = ["jxl"]
+
+[outputFormats]
+  [outputFormats.iiif]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "manifest"
+    notAlternative = true
+
+  [outputFormats.iiif-manifest]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "manifest"
+    notAlternative = true
+
+  [outputFormats.iiif-collection]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "collection"
+    notAlternative = true
+
 [markup]
-defaultMarkdownHandler = 'goldmark'
+  defaultMarkdownHandler = 'goldmark'
 
 [markup.goldmark]
     [markup.goldmark.renderer]
