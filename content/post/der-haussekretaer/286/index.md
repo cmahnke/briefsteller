@@ -2,11 +2,16 @@
 title: "Über die rücksichtslose Art der großstädtischen Ausflügler."
 date: 2024-06-25T13:04:53+02:00
 type: letter
+outputs:
+  - iiif-manifest
+  - html
 iiifContext: http://iiif.io/api/image/2/context.json
 description: 'Dieser Brief bewog mich dazu mich für die Gattung der ["Briefsteller"](https://de.wikipedia.org/wiki/Briefsteller) zu interessieren. Daher ist dies der erste inhaltliche Beitrag...'
 resources:
 - name: audio
   src: "286.mp3"
+  params:
+    iiif: 286.mp3
 ---
 
 # Über die rücksichtslose Art der großstädtischen Ausflügler.
