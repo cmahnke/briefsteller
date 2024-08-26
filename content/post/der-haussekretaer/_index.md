@@ -4,6 +4,9 @@ bookTitle: 'Der Haussekretär - Neues vollständiges Hilfs-, Formular- und Nachs
 bookAuthor: 'Dr. Carl Otto'
 date: 2021-02-07T13:04:53+02:00
 type: book
+outputs:
+  - iiif-manifest
+  - html
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 -

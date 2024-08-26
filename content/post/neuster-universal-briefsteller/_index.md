@@ -5,6 +5,9 @@ bookAuthor: 'H. Brunner'
 date: 2021-01-01T13:04:53+02:00
 iiifContext: http://iiif.io/api/image/2/context.json
 type: book
+outputs:
+  - iiif-manifest
+  - html
 tags:
 -
 itemDescription: ''

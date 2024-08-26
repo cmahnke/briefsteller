@@ -1,6 +1,6 @@
 # Über die rücksichtslose Art der großstädtischen Ausflügler.
 
-Brief eines Landbewohners an einen Freund in der stadt.
+Brief eines Landbewohners an einen Freund in der Stadt.
 
 Kein-Erland, den .. Juli .
 

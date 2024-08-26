@@ -5,6 +5,9 @@ bookAuthor: 'Karl Philipp Moritz'
 date: 2021-01-24T13:04:53+02:00
 iiifContext: http://iiif.io/api/image/2/context.json
 type: book
+outputs:
+  - iiif-manifest
+  - html
 tags:
 -
 itemDescription: ''
