@@ -217,7 +217,7 @@ html {
         content: '';
         border-radius: 0 0.6rem 0.6rem 0;
         width: 1rem;
-        background-color: color.adjust($body-bg-color, $lightness -10%);
+        background-color: color.adjust($body-bg-color, $lightness: -10%);
         right: -.7rem;
         z-index: 1;
         height: 100%;
