@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @import "normalize";
 @import "icons";
 @import "fonts/alata-regular";
@@ -11,9 +13,9 @@ $wood-texture-transform: 'rotate(90 300 300)';
 $background: $wood-light;
 /* Fonts */
 $font-color-heading: #402913;
-$font-color-title: darken($font-color-heading, 10%);
+$font-color-title: color.adjust($font-color-heading, $lightness: -10%);
 $font-color-body: #181716;
-$font-color-link: lighten($font-color-body, 15%);
+$font-color-link: color.adjust($font-color-body, $lightness: 15%);
 $font-face-body: 'Alata Regular';
 $font-face-header: 'Alata Regular';
 /* Colors */
@@ -179,7 +181,7 @@ html {
         position: absolute;
         content: '';
         width: 1.6rem;
-        background-image: linear-gradient(to right, $body-bg-color, darken($body-bg-color, 20%), $body-bg-color);
+        background-image: linear-gradient(to right, $body-bg-color, color.adjust($body-bg-color, $lightness: 20%), $body-bg-color);
         left: -1.6rem;
         height: 100%;
         top: 0;
@@ -204,7 +206,7 @@ html {
         content: '';
         border-radius: 0 0.6rem 0.6rem 0;
         width: 1rem;
-        background-color: darken($body-bg-color, 5%);
+        background-color: color.adjust($body-bg-color, $lightness: -5%);
         right: -.4rem;
         height: 100%;
         top: 0;
@@ -216,7 +218,7 @@ html {
         content: '';
         border-radius: 0 0.6rem 0.6rem 0;
         width: 1rem;
-        background-color: darken($body-bg-color, 10%);
+        background-color: color.adjust($body-bg-color, $lightness -10%);
         right: -.7rem;
         z-index: 1;
         height: 100%;
@@ -440,19 +442,19 @@ html {
     }
 
     .page1 {
-        background-color: darken($body-bg-color, 10%);
+        background-color: color.adjust($body-bg-color, $lightness: -10%);
     }
 
     .page2 {
-        background-color: darken($body-bg-color, 10%);
+        background-color: color.adjust($body-bg-color, $lightness: -10%);
     }
 
     .page3 {
-        background-color: darken($body-bg-color, 5%);
+        background-color: color.adjust($body-bg-color, $lightness: -5%);
     }
 
     .page4 {
-        background-color: darken($body-bg-color, 5%);
+        background-color: color.adjust($body-bg-color, $lightness: -5%);
     }
 
     .page5 {
