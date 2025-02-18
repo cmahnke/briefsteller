@@ -9,9 +9,12 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
-paginate = 8
+#paginate = 8
 Copyright = "Projektemacher"
 enableGitInfo = true
+
+[pagination]
+  pagerSize = 8
 
 # navigation
 [menu]
