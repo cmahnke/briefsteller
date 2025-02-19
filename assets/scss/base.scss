@@ -686,6 +686,10 @@ footer.footer {
         .navigation-item {
             padding-left: unset;
 
+            .navigation-link i.link-icon {
+                display: none;
+            }
+
             a,
             a:active,
             a:focus,
