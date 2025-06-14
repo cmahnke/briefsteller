@@ -1,0 +1,126 @@
+{"@context": "http://iiif.io/api/presentation/3/context.json",
+"type": "Manifest",
+"id": "https://briefsteller.de/post/briefsteller-fuer-damen/manifest.json",
+"viewingDirection": "left-to-right","behavior":["paged"],"requiredStatement": {
+  "label": { "en": [ "Attribution" ],
+    "de": [ "Namensnennung" ]
+  },
+  "value": {"de": ["Bereitgestellt von Projektemacher"]}
+}
+,"thumbnail": [{
+    "id": "https://briefsteller.de/post/briefsteller-fuer-damen/front_hu_d6021a11cc13814d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 434,
+    "width": 300
+  }],"provider": [
+  {
+    "id": "https://projektemacher.org/",
+    "type": "Agent",
+    "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+    "homepage": [
+      {
+        "id": "https://projektemacher.org/",
+        "type": "Text",
+        "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+        "format": "text/html"
+    }
+  ],
+  "logo": [
+    {"id": "https://projektemacher.org/images/logo.png",
+        "type": "Image",
+        "format": "image/png",
+        "height": 1024,
+        "width": 1024}
+  ],
+  "seeAlso": [
+    {
+      "id": "https://projektemacher.org/projektemacher.json",
+      "type": "Dataset",
+      "format": "application/ld+json",
+      "profile": "https://schema.org/"
+    }
+  ]
+  }
+]
+,
+
+"homepage": [
+  {
+    "id": "https://briefsteller.de/post/briefsteller-fuer-damen/manifest.json",
+    "type": "Text",
+    "format": "text/html",
+
+    "label": {
+        "de": [
+          "Briefsteller: Briefsteller für Damen"
+        ]}
+  }
+],"label": {
+    "de": [
+      "Briefsteller für Damen"
+    ]}
+,"items": [{
+          "id":"https://briefsteller.de/post/briefsteller-fuer-damen/canvas/front",
+          "type": "Canvas","label": {"de":["Vorderansicht"],"en":["Front"]},"height": 4484,
+            "width": 3097,
+            "thumbnail": [{
+                "id": "https://briefsteller.de/post/briefsteller-fuer-damen/front_hu_d6021a11cc13814d.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 434,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://briefsteller.de/post/briefsteller-fuer-damen/annotation/front",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://briefsteller.de/post/briefsteller-fuer-damen/annotation/front/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://briefsteller.de/post/briefsteller-fuer-damen/front/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4484,
+                  "width": 3097,
+                  "service": [{
+                    "id":"https://briefsteller.de/post/briefsteller-fuer-damen/front",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://briefsteller.de/post/briefsteller-fuer-damen/canvas/front"
+            }]
+          }]
+       },{
+          "id":"https://briefsteller.de/post/briefsteller-fuer-damen/canvas/title",
+          "type": "Canvas","label": {"de":["Titelseite"],"en":["Title"]},"height": 4497,
+            "width": 3064,
+            "thumbnail": [{
+                "id": "https://briefsteller.de/post/briefsteller-fuer-damen/title_hu_5bb46dde94461687.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 440,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://briefsteller.de/post/briefsteller-fuer-damen/annotation/title",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://briefsteller.de/post/briefsteller-fuer-damen/annotation/title/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://briefsteller.de/post/briefsteller-fuer-damen/title/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4497,
+                  "width": 3064,
+                  "service": [{
+                    "id":"https://briefsteller.de/post/briefsteller-fuer-damen/title",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://briefsteller.de/post/briefsteller-fuer-damen/canvas/title"
+            }]
+          }]
+       }]
+}
