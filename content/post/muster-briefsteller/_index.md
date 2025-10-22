@@ -8,8 +8,8 @@ type: book
 outputs:
   - iiif-manifest
   - html
-tags:
--
+#tags:
+#-
 itemDescription: ''
 resources:
 - src: "front.jpg"

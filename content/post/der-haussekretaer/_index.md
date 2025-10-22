@@ -8,8 +8,8 @@ outputs:
   - iiif-manifest
   - html
 iiifContext: http://iiif.io/api/image/2/context.json
-tags:
--
+#tags:
+#-
 itemDescription: ''
 resources:
 - src: "front.jpg"
