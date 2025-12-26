@@ -1,0 +1,126 @@
+{"@context": "http://iiif.io/api/presentation/3/context.json",
+"type": "Manifest",
+"id": "https://briefsteller.de/post/muster-briefsteller/manifest.json",
+"viewingDirection": "left-to-right","behavior":["paged"],"requiredStatement": {
+  "label": { "en": [ "Attribution" ],
+    "de": [ "Namensnennung" ]
+  },
+  "value": {"de": ["Bereitgestellt von Projektemacher"]}
+}
+,"thumbnail": [{
+    "id": "https://briefsteller.de/post/muster-briefsteller/front_hu_2722d9511c2dfa02.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 455,
+    "width": 300
+  }],"provider": [
+  {
+    "id": "https://projektemacher.org/",
+    "type": "Agent",
+    "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+    "homepage": [
+      {
+        "id": "https://projektemacher.org/",
+        "type": "Text",
+        "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+        "format": "text/html"
+    }
+  ],
+  "logo": [
+    {"id": "https://projektemacher.org/images/logo.png",
+        "type": "Image",
+        "format": "image/png",
+        "height": 1024,
+        "width": 1024}
+  ],
+  "seeAlso": [
+    {
+      "id": "https://projektemacher.org/projektemacher.json",
+      "type": "Dataset",
+      "format": "application/ld+json",
+      "profile": "https://schema.org/"
+    }
+  ]
+  }
+]
+,
+
+"homepage": [
+  {
+    "id": "https://briefsteller.de/post/muster-briefsteller/manifest.json",
+    "type": "Text",
+    "format": "text/html",
+
+    "label": {
+        "de": [
+          "Briefsteller: Muster-Briefsteller"
+        ]}
+  }
+],"label": {
+    "de": [
+      "Muster-Briefsteller"
+    ]}
+,"items": [{
+          "id":"https://briefsteller.de/post/muster-briefsteller/canvas/front",
+          "type": "Canvas","label": {"de":["Vorderansicht"],"en":["Front"]},"height": 4479,
+            "width": 2955,
+            "thumbnail": [{
+                "id": "https://briefsteller.de/post/muster-briefsteller/front_hu_2722d9511c2dfa02.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 455,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://briefsteller.de/post/muster-briefsteller/annotation/front",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://briefsteller.de/post/muster-briefsteller/annotation/front/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://briefsteller.de/post/muster-briefsteller/front/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4479,
+                  "width": 2955,
+                  "service": [{
+                    "id":"https://briefsteller.de/post/muster-briefsteller/front",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://briefsteller.de/post/muster-briefsteller/canvas/front"
+            }]
+          }]
+       },{
+          "id":"https://briefsteller.de/post/muster-briefsteller/canvas/title",
+          "type": "Canvas","label": {"de":["Titelseite"],"en":["Title"]},"height": 4358,
+            "width": 2778,
+            "thumbnail": [{
+                "id": "https://briefsteller.de/post/muster-briefsteller/title_hu_73bcc81e31e2b637.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 471,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://briefsteller.de/post/muster-briefsteller/annotation/title",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://briefsteller.de/post/muster-briefsteller/annotation/title/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://briefsteller.de/post/muster-briefsteller/title/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4358,
+                  "width": 2778,
+                  "service": [{
+                    "id":"https://briefsteller.de/post/muster-briefsteller/title",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://briefsteller.de/post/muster-briefsteller/canvas/title"
+            }]
+          }]
+       }]
+}
