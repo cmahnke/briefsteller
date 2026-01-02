@@ -1,0 +1,112 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://briefsteller.de/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Briefsteller"
+        ]},
+    "items": [{
+          "id": "https://briefsteller.de/post/der-haussekretaer/286/manifest.json",
+          "type": "Manifest","label": {
+            "de": [
+              "Über die rücksichtslose Art der großstädtischen Ausflügler."
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/der-haussekretaer/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/der-haussekretaer/front_hu_ed9ae10a252a5cbe.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 436,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Der Haussekretär"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/briefsteller-fuer-damen/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/briefsteller-fuer-damen/front_hu_eb6b5be25f94cfd9.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 434,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Briefsteller für Damen"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/allgemeiner-deutscher-briefsteller/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/allgemeiner-deutscher-briefsteller/front_hu_c2dcbc70111db404.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 541,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Allgemeiner deutscher Briefsteller"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/abc-des-briefschreibens/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/abc-des-briefschreibens/front_hu_adc50ad809fa5ecf.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 435,
+    "width": 300
+  }],"label": {
+            "de": [
+              "ABC des Briefschreibens"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/modern-business-letters/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/modern-business-letters/front_hu_3e081288be0de4ab.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 479,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Modern Business Letters"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/muster-briefsteller/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/muster-briefsteller/front_hu_2722d9511c2dfa02.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 455,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Muster-Briefsteller"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/neuster-universal-briefsteller/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/neuster-universal-briefsteller/front_hu_167a692fa5d16140.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 473,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Neuster Universal=Briefsteller"
+            ]}
+        },{
+          "id": "https://briefsteller.de/post/liebesbriefsteller/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://briefsteller.de/post/liebesbriefsteller/front_hu_ac8bf62d76ea4ac1.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 446,
+    "width": 300
+  }],"label": {
+            "de": [
+              "Liebesbriefsteller"
+            ]}
+        }]
+  }
