@@ -1,0 +1,26 @@
+{"@context": "http://iiif.io/api/presentation/3/context.json",
+"type": "Manifest",
+"id": "https://briefsteller.de/post/liebesbriefsteller/manifest.json",
+"viewingDirection": "left-to-right","behavior":["paged"],"requiredStatement":{"label":{"de":["Namensnennung"],"en":["Attribution"]},"value":{"de":["Bereitgestellt von Projektemacher"]}},"thumbnail": [{"format":"image/jpeg","height":446,"id":"https://briefsteller.de/post/liebesbriefsteller/front_hu_ac8bf62d76ea4ac1.jpg","type":"Image","width":300}],"provider": [{"homepage":[{"format":"text/html","id":"https://projektemacher.org/","label":{"de":["Projektemacher"],"en":["Projektemacher"]},"type":"Text"}],"id":"https://projektemacher.org/","label":{"de":["Projektemacher"],"en":["Projektemacher"]},"logo":[{"format":"image/png","height":1024,"id":"https://projektemacher.org/images/logo.png","type":"Image","width":1024}],"seeAlso":[{"format":"application/ld+json","id":"https://projektemacher.org/projektemacher.json","profile":"https://schema.org/","type":"Dataset"}],"type":"Agent"}],"homepage": [{"format":"text/html","id":"https://briefsteller.de/post/liebesbriefsteller/manifest.json","label":{"de":["Briefsteller: Liebesbriefsteller"]},"type":"Text"}],"label": {"de":["Liebesbriefsteller"]},"items": [{
+          "id":"https://briefsteller.de/post/liebesbriefsteller/canvas/front",
+          "type": "Canvas","label": {"de":["Vorderansicht"],"en":["Front"]},"height": 4551,
+            "width": 3059,
+            "thumbnail": [{
+                "id": "https://briefsteller.de/post/liebesbriefsteller/front_hu_ac8bf62d76ea4ac1.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 446,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://briefsteller.de/post/liebesbriefsteller/annotation/front",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://briefsteller.de/post/liebesbriefsteller/annotation/front/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"format":"image/jpeg","height":4551,"id":"https://briefsteller.de/post/liebesbriefsteller/front","service":{"id":"https://briefsteller.de/post/liebesbriefsteller/front","profile":"level0","type":"ImageService2"},"type":"Image","width":3059},
+              "target":"https://briefsteller.de/post/liebesbriefsteller/canvas/front"
+            }]}]
+       }]
+}
