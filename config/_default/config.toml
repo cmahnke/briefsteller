@@ -1,7 +1,7 @@
 [params]
     header = "/images/header.svg"
     faviconSVG = "/images/logo.svg"
-    copyrightYears = "2021 - 2025"
+    copyrightYears = "2021 - 2026"
     copyright = "Projektemacher"
     disableScale = true
     description = "Briefe aus alten Briefstellern"
