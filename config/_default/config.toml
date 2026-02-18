@@ -7,15 +7,20 @@
     description = "Briefe aus alten Briefstellern"
     debug = false
 
-    [params.preview]
-        outputPrefix = "ogPreview-overlay"
-        outputSuffix = ".png"
-        format =  "svg"
-        image = "front.png"
-        source = "overlay"
-        [params.preview.size]
-            height = 630
-            width = 1200
-        [params.preview.svg]
-            template = "./Source Files/Other/preview-template.svg"
-            scale = "width"
+[params.preview]
+    outputPrefix = "ogPreview-overlay"
+    outputSuffix = ".png"
+    format =  "svg"
+    image = "front.png"
+    source = "overlay"
+    [params.preview.size]
+        height = 630
+        width = 1200
+    [params.preview.svg]
+        template = "./Source Files/Other/preview-template.svg"
+        scale = "width"
+
+[params.author]
+    email = 'mail@christianmahnke.de'
+    name = 'Christian Mahnke'
+    uri = 'http://www.wikidata.org/entity/Q137668638'
