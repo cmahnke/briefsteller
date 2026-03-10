@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buch - Beispiel</title>
+    <link rel="stylesheet" href="assets/scss/style.scss" data-precedence="next" />
+  </head>
+  <body class="bw">
+    <div class="book-container">
+      <svg id="book-svg" width="900" height="600" viewBox="0 0 900 600">
+        <defs>
+          <linearGradient id="spineGrad" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="rgba(0,0,0,0)" />
+            <stop offset="50%" stop-color="rgba(0,0,0,0.6)" />
+            <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+          </linearGradient>
+          <g id="path-defs"></g>
+        </defs>
+        <rect class="cover" x="40" y="40" width="820" height="520" rx="10" />
+        <path id="page-left" class="page" />
+        <path id="page-right" class="page" />
+        <rect id="spine-rect" class="spine-shadow" x="380" y="50" width="140" height="500" />
+        <g id="text-container"></g>
+      </svg>
+
+      <div class="controls">
+        <div><label>Falz-Tiefe</label><input type="range" id="spineDepth" min="0" max="150" value="50" /></div>
+        <div><label>Seiten-Wölbung</label><input type="range" id="pageBulge" min="0" max="150" value="60" /></div>
+        <div><label>Einzug (Flachheit)</label><input type="range" id="indent" min="20" max="200" value="80" /></div>
+        <div><label>Seitenrand X (Text)</label><input type="range" id="marginH" min="10" max="150" value="40" /></div>
+        <div><label>Seitenrand Y (Text)</label><input type="range" id="marginV" min="20" max="150" value="60" /></div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="showShadow" checked />
+          <label for="showShadow" style="margin: 0">Falz-Schatten aktivieren</label>
+        </div>
+      </div>
+    </div>
+    <script src="assets/ts/main.ts" type="module"></script>
+  </body>
+</html>

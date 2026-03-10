@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "strictPropertyInitialization": false,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "allowJs": true,
+    "typeRoots": ["./webgpu/assets/ts/@types", "./pong/assets/ts/@types"],
+    "target": "es2020",
+    "skipLibCheck": true,
+    "lib": ["dom", "es2020"]
+  },
+  "include": [
+    "page-curl/assets/**/*"
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*"]
+}

@@ -1,0 +1,74 @@
+body {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+.book-container {
+  position: relative;
+}
+svg {
+  /*filter: drop-shadow(0px 25px 50px rgba(0, 0, 0, 0.9));*/
+  background: #1a1a1a;
+}
+.cover {
+  fill: #2c1b18;
+}
+.page {
+  fill: #fdfaf3;
+  stroke: #dcd7ca;
+  stroke-width: 0.5;
+}
+.spine-shadow {
+  fill: url(#spineGrad);
+  pointer-events: none;
+}
+.text-line {
+  font-size: 13px;
+  fill: #222;
+  font-family: "Georgia", serif;
+  pointer-events: none;
+}
+
+.bw {
+   filter: grayscale(1) contrast(100) brightness(1);
+   /* mix-blend-mode: multiply; */
+}
+
+.controls {
+  position: absolute;
+  bottom: -120px;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  background: rgba(40, 40, 40, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  width: 860px;
+
+  label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+    color: #bbb;
+  }
+  input[type="range"] {
+    width: 100%;
+  }
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    grid-column: span 3;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+  }
+}

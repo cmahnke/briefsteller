@@ -1,0 +1,13 @@
+dist/**
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*.webm
+
+touch/public/page031/**
+
+wikidata/**/*.nt
+wikidata/**/*.ttl
+__pycache__
