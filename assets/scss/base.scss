@@ -271,8 +271,8 @@ html {
 .list-container,
 .post-container,
 .shelf-container {
-    border-top: 2px dashed lighten($home-bg-color, 10%);
-    border-bottom: 2px dashed lighten($home-bg-color, 10%);
+    border-top: 2px dashed color.adjust($home-bg-color, $lightness: 10%);
+    border-bottom: 2px dashed color.adjust($home-bg-color, $lightness: 10%);
     background-color: $home-bg-color;
     box-shadow: 0 -.4rem 0.2rem $home-bg-color, 0 0.4rem 0.2rem $home-bg-color;
     padding-top: 1.6em;
@@ -673,8 +673,8 @@ footer.footer {
             padding: 0;
             max-height: 0;
             width: auto;
-            border-top: 2px dashed lighten($home-bg-color, 10%);
-            border-bottom: 2px dashed lighten($home-bg-color, 10%);
+            border-top: 2px dashed color.adjust($home-bg-color, $lightness: 10%);
+            border-bottom: 2px dashed color.adjust($home-bg-color, $lightness: 10%);
             transition: opacity 0.25s, max-height 0.15s linear;
             height: auto;
             background-color: $home-bg-color;
