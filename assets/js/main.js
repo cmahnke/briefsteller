@@ -1,75 +1,96 @@
-window.$ = window.jQuery = require('jquery');
-
 require('./iiif-image-viewer');
 
 import { audioplayer } from './audioplayer';
 
 function addRotate(nodes) {
-    nodes.hover(function(){
-      $(this).addClass('rotate');
-  },function(){
-      $(this).removeClass('rotate');
+    nodes.forEach(function(node) {
+        node.addEventListener('mouseenter', function() {
+            this.classList.add('rotate');
+        });
+        node.addEventListener('mouseleave', function() {
+            this.classList.remove('rotate');
+        });
     });
 }
-
 
 function addClick(node) {
-    node.click(function (event) {
+    node.addEventListener('click', function(event) {
 
         /* Reset already opened books */
-        $('.book-li.open').removeClass('open')
-        $('.page').removeClass('open');
+        document.querySelectorAll('.book-li.open').forEach(el => el.classList.remove('open'));
+        document.querySelectorAll('.page').forEach(el => el.classList.remove('open'));
+
         /* Disable mouseover animation */
-        $(this).closest('.book-wrap').unbind('mouseenter mouseleave').removeClass('rotate');
-        $(this).closest('.book-li').css('justify-content', 'flex-end').addClass('open');
+        const bookWrap = this.closest('.book-wrap');
+        bookWrap.removeEventListener('mouseenter', bookWrap._mouseenter);
+        bookWrap.removeEventListener('mouseleave', bookWrap._mouseleave);
+        bookWrap.classList.remove('rotate');
 
-        var link = $(this).parent('a');
+        const bookLi = this.closest('.book-li');
+        bookLi.style.justifyContent = 'flex-end';
+        bookLi.classList.add('open');
 
-        var pageHeight = link.find('.book.preview img').height();
-        link.find('.page').each(function (){
-            $(this).height(pageHeight);
+        const link = this.closest('a');
+
+        const previewImg = link.querySelector('.book.preview img');
+        const pageHeight = previewImg ? previewImg.offsetHeight : 0;
+        link.querySelectorAll('.page').forEach(function(page) {
+            page.style.height = pageHeight + 'px';
         });
 
-        link.parent('.book-wrap').removeClass('rotate');
-        link.unbind('mouseenter').unbind('mouseleave');
-        link.children('.page').each(function () {
-            $(this).unbind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd");
-            $(this).addClass('open');
+        link.closest('.book-wrap').classList.remove('rotate');
+
+        link.removeEventListener('mouseenter', link._mouseenter);
+        link.removeEventListener('mouseleave', link._mouseleave);
+
+        const transitionEvents = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd'.split(' ');
+        link.querySelectorAll('.page').forEach(function(page) {
+            transitionEvents.forEach(event => page.removeEventListener(event, page._transitionEnd));
+            page.classList.add('open');
         });
 
-        link.attr('href', link.data('href'));
+        link.setAttribute('href', link.dataset.href);
         event.preventDefault();
-        $(this).off();
+        node.removeEventListener('click', arguments.callee);
     });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
 
-$(document).ready(function() {
+    addRotate(Array.from(document.querySelectorAll('.book-link')).map(el => el.parentElement));
 
-    addRotate($('.book-link').parent());
-
-    $('.close-book').each(function () {
-        $(this).click(function (event) {
+    document.querySelectorAll('.close-book').forEach(function(closeBtn) {
+        closeBtn.addEventListener('click', function(event) {
             event.preventDefault();
 
-            var link = $(this).closest('.book-link');
-            link.attr('href', '#');
-            link.children('.page').each(function () {
-                $(this).removeClass('open').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-                    link.closest('.book-li.open').css('justify-content', 'unset').removeClass('open').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+            const link = this.closest('.book-link');
+            link.setAttribute('href', '#');
 
-                    });
-                 });
+            const transitionEvents = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd'.split(' ');
+
+            link.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('open');
+
+                function onPageTransitionEnd() {
+                    transitionEvents.forEach(ev => page.removeEventListener(ev, onPageTransitionEnd));
+
+                    const openBookLi = link.closest('.book-li.open');
+                    if (openBookLi) {
+                        openBookLi.style.justifyContent = 'unset';
+                        openBookLi.classList.remove('open');
+                    }
+                }
+
+                transitionEvents.forEach(ev => page.addEventListener(ev, onPageTransitionEnd));
             });
 
-            addRotate(link.parent());
-            addClick(link.find('.book.preview'));
+            addRotate([link.parentElement]);
+            addClick(link.querySelector('.book.preview'));
         });
     });
 
-    $('.book-link').each(function () {
-
-        addClick($(this).find('.book.preview'));
+    document.querySelectorAll('.book-link').forEach(function(bookLink) {
+        addClick(bookLink.querySelector('.book.preview'));
     });
 
 });
