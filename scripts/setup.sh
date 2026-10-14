@@ -8,6 +8,10 @@ if [ -z "$SKIP_IIIF" ] ; then
     ./scripts/iiif.sh
 fi
 
+if [ -z "$DEPENDENCY_MANAGER" ] ; then
+  export DEPENDENCY_MANAGER=npm
+fi
+
 #NPM dependencies
 echo "Calling theme scripts"
 for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
@@ -20,7 +24,7 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     fi
 done
 
-yarn run svgo
+$DEPENDENCY_MANAGER run svgo
 convert static/images/logo.svg -resize 256x256 -transparent white static/images/logo.png
 
 SOURCE="static/images/logo.png" OPTIONS="-resize 128x128 -transparent white" ./themes/projektemacher-base/scripts/favicon.sh
