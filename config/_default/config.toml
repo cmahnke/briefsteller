@@ -6,6 +6,7 @@
     disableScale = true
     description = "Briefe aus alten Briefstellern"
     debug = false
+    schemaPerson = "https://christianmahnke.de/person.jsonld"
 
 [params.preview]
     outputPrefix = "ogPreview-overlay"
