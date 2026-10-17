@@ -7,8 +7,8 @@ from datetime import datetime
 from termcolor import cprint
 from markdown_it import MarkdownIt
 from mdit_plain.renderer import RendererPlain
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'themes', 'projektemacher-base', 'scripts' ,'PyHugo'))
-from content import Post, Content
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'themes', 'projektemacher-base', 'scripts'))
+from PyHugo import Post, Content
 
 emptyLinePattern = re.compile("^\s*$")
 

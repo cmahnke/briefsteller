@@ -18,6 +18,7 @@ static/images/logo.*
 **/.DS_Store
 **/vips-properties.xml
 assets/css/fonts
+assets/scss/npm-fonts/*.scss
 static/fonts
 data/stats.json
 **/*-tts.json
