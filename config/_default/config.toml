@@ -3,7 +3,6 @@
     faviconSVG = "/images/logo.svg"
     copyrightYears = "2021 - 2026"
     copyright = "Projektemacher"
-    disableScale = true
     description = "Briefe aus alten Briefstellern"
     debug = false
     schemaPerson = "https://christianmahnke.de/person.jsonld"
