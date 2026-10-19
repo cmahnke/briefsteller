@@ -1,6 +1,4 @@
-require('./iiif-image-viewer');
-
-import { audioplayer } from './audioplayer';
+import '../ts/audioplayer';
 
 function addRotate(nodes) {
     nodes.forEach(function(node) {
