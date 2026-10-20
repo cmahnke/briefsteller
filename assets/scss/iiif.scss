@@ -1,6 +1,7 @@
 /* IIIF */
 /* $aspect-ration: 1.42; */
 $aspect-ration: 1.0;
+$content-width: 64em !default;
 
 .iiif, .description-images {
     max-width: $content-width;

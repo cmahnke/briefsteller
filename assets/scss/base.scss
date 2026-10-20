@@ -1,16 +1,14 @@
 @use "sass:color";
 
-@import "normalize";
-@import "icons";
-@import "npm-fonts/alata";
-@import "hugo-fonts";
-@import "ol-iiif";
-@import "share";
+@use "normalize";
+@use "icons" as *;
+@use "npm-fonts/alata";
+@use "hugo-fonts";
+@use "ol-iiif";
+@use "share";
 /* Background settings */
-$wood-texture-opacity: 0.8;
-$wood-texture-transform: 'rotate(90 300 300)';
-@import "textures/wood";
-$background: $wood-light;
+@use "textures/wood" as wood with ($wood-texture-opacity: 0.8, $wood-texture-transform: 'rotate(90 300 300)');
+$background: wood.$wood-light;
 /* Fonts */
 $font-color-heading: #402913;
 $font-color-title: color.adjust($font-color-heading, $lightness: -10%);
@@ -28,10 +26,10 @@ $home-bg-color: rgb(57, 74, 65);
 /* Header and Footer */
 $color-body-text: $font-color-body;
 $secondary-icon-color: $font-color-link;
-@import "menu";
-@import "footer";
-@import "audioplayer";
-@import "iiif";
+@use "menu" as menu with ($frame-bg-color: $frame-bg-color, $menu-bg-color: $menu-bg-color, $secondary-icon-color: $secondary-icon-color, $font-color-body: $font-color-body);
+@use "footer";
+@use "audioplayer";
+@use "iiif" with ($content-width: $content-width);
 /* Book size settings */
 $book-width: 240px;
 $book-padding: 3rem;
@@ -641,7 +639,7 @@ footer.footer {
     }
 
     .menu-icon {
-        content: url($burger-menu-secondary);
+        content: url(menu.$burger-menu-secondary);
         height: 2em;
         width: 2em;
     }
