@@ -92,7 +92,7 @@ enableGitInfo = true
         quality = 95
 
 [outputs]
-    page = ["HTML", "JSON"]
+    page = ["HTML"]
 
 [sitemap]
   changeFreq = 'weekly'
