@@ -1,16 +1,17 @@
 ---
 title: "Briefsteller für Damen"
-bookTitle: 'Neuer praktischer Briefsteller für Damen nebst einem Anhang: Stammbuchverse'
-bookAuthor: 'Carl Adelsberg'
+params:
+  bookTitle: 'Neuer praktischer Briefsteller für Damen nebst einem Anhang: Stammbuchverse'
+  bookAuthor: 'Carl Adelsberg'
+  iiifContext: http://iiif.io/api/image/2/context.json
+  itemDescription: ''
 date: 2021-01-31T13:04:53+02:00
-iiifContext: http://iiif.io/api/image/2/context.json
 type: book
 outputs:
   - iiif-manifest
   - html
 #tags:
 #-
-itemDescription: ''
 resources:
 - src: "front.jpg"
   name: front

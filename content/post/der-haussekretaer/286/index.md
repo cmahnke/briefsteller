@@ -5,7 +5,8 @@ type: letter
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
+params:
+  iiifContext: http://iiif.io/api/image/2/context.json
 description: 'Dieser Brief bewog mich dazu mich für die Gattung der ["Briefsteller"](https://de.wikipedia.org/wiki/Briefsteller) zu interessieren. Daher ist dies der erste inhaltliche Beitrag...'
 resources:
 - name: audio

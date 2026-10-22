@@ -1,16 +1,17 @@
 ---
 title: "ABC des Briefschreibens"
-bookTitle: 'ABC des Briefschreibens - Der schriftliche Verkehr im täglichen Geschäfts- und Privatverkehr'
-bookAuthor: 'Dr. Th. Meissner'
+params:
+  bookTitle: 'ABC des Briefschreibens - Der schriftliche Verkehr im täglichen Geschäfts- und Privatverkehr'
+  bookAuthor: 'Dr. Th. Meissner'
+  iiifContext: http://iiif.io/api/image/2/context.json
+  itemDescription: ''
 date: 2021-01-17T13:04:53+02:00
-iiifContext: http://iiif.io/api/image/2/context.json
 type: book
 outputs:
   - iiif-manifest
   - html
 #tags:
 #-
-itemDescription: ''
 resources:
 - src: "front.jpg"
   name: front

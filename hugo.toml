@@ -1,7 +1,7 @@
 baseURL = "https://briefsteller.de/"
 title = "Briefsteller"
 locale = "de"
-defaultcontentlanguage = "de"
+defaultContentLanguage = "de"
 publishDir = "docs"
 canonifyURLs = true
 disablePathToLower = true

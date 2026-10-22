@@ -1,6 +1,7 @@
 ---
 title: Letzte Beiträge
-displayinlist: false
-metaPage: true
+params:
+  displayinlist: false
+  metaPage: true
 layout: books
 ---

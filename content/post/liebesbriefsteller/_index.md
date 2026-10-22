@@ -1,16 +1,17 @@
 ---
 title: "Liebesbriefsteller"
-bookTitle: 'Der wirklich brauchbare Liebesbriefsteller'
-bookAuthor: 'Hans Teichmann'
+params:
+  bookTitle: 'Der wirklich brauchbare Liebesbriefsteller'
+  bookAuthor: 'Hans Teichmann'
+  iiifContext: http://iiif.io/api/image/2/context.json
+  itemDescription: ''
 date: 2020-12-28T13:04:53+02:00
-iiifContext: http://iiif.io/api/image/2/context.json
 type: book
 outputs:
   - iiif-manifest
   - html
 #tags:
 #-
-itemDescription: ''
 resources:
 - src: "front.jpg"
   name: front
