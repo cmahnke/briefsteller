@@ -12,6 +12,8 @@ theme = ["projektemacher-base"]
 Copyright = "Projektemacher"
 enableGitInfo = true
 
+enableRobotsTXT = true
+
 [pagination]
   pagerSize = 8
 
@@ -123,3 +125,6 @@ enableGitInfo = true
 
 [params.js]
   format = "esm"
+
+[params.robots]
+  llmsTXT = true
