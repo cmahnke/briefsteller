@@ -110,6 +110,10 @@ enableGitInfo = true
         source = "assets/js"
         target = "assets/js"
 
+    [[module.mounts]]
+        source = "assets/ts"
+        target = "assets/ts"
+
 [build]
   writeStats = true
 
