@@ -2,7 +2,7 @@
 <div class="shelf-container">
     <div class="shelf">
         <ul class="book-list">
-          {{- range where $pages "Params.type" "eq" "book" -}}
+          {{- range where $pages "Type" "eq" "book" -}}
             {{- $titleThumb := "" -}}
             {{- $title := .Resources.GetMatch "title*" -}}
             {{- $front := .Resources.GetMatch "front*" -}}
@@ -26,8 +26,8 @@
                           </div>
                           <div class="page5 page">
                               <div class="page-content">
-                                  {{- if .Params.title -}}
-                                      <h1 class="book-heading">{{- .Params.title | markdownify -}}</h1>
+                                  {{- if .Title -}}
+                                      <h1 class="book-heading">{{- .Title | markdownify -}}</h1>
                                   {{- end -}}
                                   <div class="book-latest">{{ $latest }}</div>
                               </div>
