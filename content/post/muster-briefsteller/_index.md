@@ -5,8 +5,8 @@ params:
   bookAuthor: 'Georg von Saal'
   iiifContext: http://iiif.io/api/image/2/context.json
   itemDescription: ''
+  itemType: book
 date: 2021-01-03T13:04:53+02:00
-type: book
 outputs:
   - iiif-manifest
   - html

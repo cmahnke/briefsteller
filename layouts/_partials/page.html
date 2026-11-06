@@ -1,7 +1,7 @@
 {{- $page := .Page -}}
 {{- $context := path.Dir .File.Path -}}
 {{- $pageURL := .Permalink -}}
-<div class="post-container post {{ .Params.type }}">
+<div class="post-container post {{ .Params.itemType }}">
     <div class="open-book">
         <div class="previous-page-1"></div>
         <div class="content">
@@ -21,8 +21,8 @@
               </div>
             {{- end -}}
             {{- $contentClass := "" -}}
-            {{- if .Params.type -}}
-              {{- $contentClass = .Params.type -}}
+            {{- if .Params.itemType -}}
+              {{- $contentClass = .Params.itemType -}}
             {{- end -}}
             {{- if .Description -}}
               <div class="post-description {{ $contentClass | safeCSS }}">
@@ -56,7 +56,7 @@
             {{- if .Params.iiif -}}
                 <div class="iiif">
                   {{- range .Params.resources -}}
-                    {{- if or (and (ne $.Params.type "work") (ne $.Params.type "book")) (not (or (or (eq .name "front") (eq .name "title")) (eq .name "cover"))) -}}
+                    {{- if or (and (ne $.Params.itemType "work") (ne $.Params.itemType "book")) (not (or (or (eq .name "front") (eq .name "title")) (eq .name "cover"))) -}}
                       {{- if .params.iiif -}}
                         {{ partial "iiif/iiif-image.html" (dict "context" . "contextPath" $context "pageURL" .Permalink "pageContext" $page "site" $.Site) }}
                       {{- end -}}
@@ -66,8 +66,8 @@
             {{- end -}}
 
             {{/* TODO: Check if this is still needed */}}
-            {{- if and .Params.type (or .Description .Params.bookTitle) (ne .Params.type "letter") -}}
-                {{- partial (printf "media/%s.html" .Params.type ) . -}}
+            {{- if and .Params.itemType (or .Description .Params.bookTitle) (ne .Params.itemType "letter") -}}
+                {{- partial (printf "media/%s.html" .Params.itemType ) . -}}
             {{- end -}}
 
             {{- if not .Params.metaPage -}}

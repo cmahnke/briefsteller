@@ -7,8 +7,8 @@ params:
   #tags:
   #-
   itemDescription: ''
+  itemType: book
 date: 2021-02-07T13:04:53+02:00
-type: book
 outputs:
   - iiif-manifest
   - html

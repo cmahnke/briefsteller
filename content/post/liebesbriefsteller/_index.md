@@ -5,8 +5,8 @@ params:
   bookAuthor: 'Hans Teichmann'
   iiifContext: http://iiif.io/api/image/2/context.json
   itemDescription: ''
+  itemType: book
 date: 2020-12-28T13:04:53+02:00
-type: book
 outputs:
   - iiif-manifest
   - html
