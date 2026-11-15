@@ -1,0 +1,17 @@
+User-agent: *
+
+Disallow: /privacy/
+
+Disallow: /meta/_index.en/
+
+
+Disallow: /*.bib$
+
+Disallow: /*.json$
+
+Disallow: /*.xml$
+
+Sitemap: https://briefsteller.de/sitemap.xml
+
+
+llms-txt: https://briefsteller.de/llms.txt
